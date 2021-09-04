@@ -20,8 +20,8 @@ const touch = () => through2.obj( function( file, enc, cb ) {
  * Compile files from assets/sass into both assets/css
  */
 function compileSass(done) {
-    src('assets/sass/master.sass')
-    .pipe(sass({ includePaths: ['sass'], outputStyle: 'compressed' })
+    src('assets/sass/app.sass')
+    .pipe(sass({ includePaths: ['sass'], outputStyle: 'uncompressed' })
         .on('error', sass.logError)
     )
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
@@ -33,8 +33,8 @@ function compileSass(done) {
 /**
  * Compile files from assets/sass into both assets/css
  */
-function compileEditorSass(done) {
-    src('assets/sass/editor.sass')
+function deploySass(done) {
+    src('assets/sass/app.sass')
     .pipe(sass({ includePaths: ['sass'], outputStyle: 'compressed' })
         .on('error', sass.logError)
     )
@@ -55,6 +55,10 @@ function watchSass() {
  * Deploy production package
  */
 function deploy() {
+    console.log('Compiling sass');
+
+    compileSass
+
     console.log('Building files');
   
     src([
@@ -64,7 +68,7 @@ function deploy() {
         '!' + source + '/assets/sass',
         '!' + source + '/assets/sass/**/*',
     ], { base: source })
-        .pipe( zip('anthem.zip') )
+        .pipe( zip('cuppajoey.zip') )
         .pipe( dest(distribution) )
     done();
 
@@ -90,5 +94,4 @@ function copy() {
  */
 exports.deploy = deploy;
 exports.copy = copy;
-exports.editorSass = compileEditorSass;
 exports.default = series(compileSass, watchSass);
