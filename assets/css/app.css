@@ -433,6 +433,42 @@
   --bg-2-inverse: #13131B;
   --bg-3-inverse: #262734; }
 
+.bg-1 {
+  background-color: var(--bg-1); }
+
+.bg-1-inverse {
+  background-color: var(--bg-1-inverse); }
+
+.text-1 {
+  color: var(--text-1); }
+
+.text-1-inverse {
+  color: var(--text-1-inverse); }
+
+.bg-2 {
+  background-color: var(--bg-2); }
+
+.bg-2-inverse {
+  background-color: var(--bg-2-inverse); }
+
+.text-2 {
+  color: var(--text-2); }
+
+.text-2-inverse {
+  color: var(--text-2-inverse); }
+
+.bg-3 {
+  background-color: var(--bg-3); }
+
+.bg-3-inverse {
+  background-color: var(--bg-3-inverse); }
+
+.text-3 {
+  color: var(--text-3); }
+
+.text-3-inverse {
+  color: var(--text-3-inverse); }
+
 @font-face {
   font-family: Cooper;
   src: url(../fonts/CoopLT.ttf);
@@ -448,8 +484,7 @@ body {
   font-family: "Cooper", "Times New Roman", sans-serif;
   font-weight: 300;
   line-height: 1.25;
-  letter-spacing: 0.04rem;
-  color: var(--text-1); }
+  letter-spacing: 0.04rem; }
 
 .display-1 {
   font-size: 5rem; }
@@ -512,6 +547,9 @@ body {
   max-height: 100%;
   width: 400px;
   height: 530px; }
+
+img {
+  width: 100%; }
 
 .wrapper {
   max-width: 1360px;
