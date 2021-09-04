@@ -1,0 +1,20 @@
+{
+    "name": "cuppajoey",
+    "version": "1.0.0",
+    "description": "Personal Portfolio Website for Joseph Schultz",
+    "main": "gulpfile.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Joseph Schultz",
+    "license": "ISC",
+    "devDependencies": {
+      "gulp": "^4.0.0",
+      "gulp-autoprefixer": "^4.1.0",
+      "gulp-sass": "^3.1.0",
+      "gulp-zip": "^5.0.1",
+      "run-sequence": "^2.2.1",
+      "through2": "^4.0.2"
+    }
+  }
+  
