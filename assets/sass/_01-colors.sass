@@ -32,3 +32,14 @@ $bg-3-inverse: var(--bg-3-inverse)
 // Borders
 $border: 0.1rem solid #B7BECC
 $border-inverse: 0.1rem solid #3B3D4E
+
+// Color Classes
+@for $i from 1 through 3
+    .bg-#{$i}
+        background-color: var(--bg-#{$i})
+    .bg-#{$i}-inverse
+        background-color: var(--bg-#{$i}-inverse)
+    .text-#{$i}
+        color: var(--text-#{$i})
+    .text-#{$i}-inverse
+        color: var(--text-#{$i}-inverse)
