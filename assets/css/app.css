@@ -1,0 +1,31 @@
+/*
+    Keep in mind:
+    Site will auto include Carbon Components CSS
+    before main css is loaded. These sass files should only be
+    used to overwrite Carbon styles
+ */
+/* CSS color scheme */
+:root {
+  --text-1: #13131B;
+  --text-2: #3B3D4E;
+  --text-3: #686D80;
+  --text-1-inverse: #FFFFFF;
+  --text-2-inverse: #D5DBE6;
+  --text-3-inverse: #9BA2B3;
+  --bg-1: #FFFFFF;
+  --bg-2: #F5F8FF;
+  --bg-3: #D5DBE6;
+  --bg-1-inverse: #07070D;
+  --bg-2-inverse: #13131B;
+  --bg-3-inverse: #262734; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--text-1); }
