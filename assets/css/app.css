@@ -79,3 +79,9 @@ h4 {
 body {
   margin: 0;
   padding: 0; }
+
+[class*=col] {
+  background-color: var(--bg-1-inverse);
+  color: var(--text-1-inverse);
+  padding: 3rem 0 !important;
+  border: 0.1rem solid #B7BECC; }
