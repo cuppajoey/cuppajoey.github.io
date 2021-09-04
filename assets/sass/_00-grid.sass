@@ -1,0 +1,560 @@
+// Breakpoints Setup
+
+\:root
+  --min: 20rem
+  --xxs: 30rem
+  --xs: 40rem
+  --sm: 50rem
+  --md: 60rem
+  --lg: 70rem
+  --xl: 80rem
+  --xxl: 90rem
+  --max: 100rem
+
+// Grid Area Setup
+
+.header
+  grid-area: header
+
+.content
+  grid-area: content
+  position: relative
+
+.sc-footer
+  grid-area: footer
+
+.main
+  grid-area: main
+
+.aside-left
+  grid-area: left
+  // position: fixed
+  position: relative
+  width: 18rem
+
+.aside-right
+  grid-area: right
+  // position: fixed
+  position: relative
+
+// Grid Setup
+
+.body
+  display: grid
+  grid-template-columns: 100%
+  grid-template-rows: auto auto auto
+  grid-template-areas: "header" "content" "footer"
+  flex-direction: column
+
+  &.no-footer
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: auto auto
+    grid-template-areas: "header" "content"
+    flex-direction: column
+
+.content
+  display: grid
+  grid-template-columns: 100%
+  grid-template-rows: auto
+  grid-template-areas: "main"
+  flex-direction: row
+
+  &.content-left
+    display: grid
+    // grid-template-columns: 18rem auto
+    grid-template-columns: 18rem calc(100% - 18rem)
+    grid-template-rows: auto
+    grid-template-areas: "left main"
+
+  &.content-right
+    display: grid
+    grid-template-columns: auto 18rem
+    grid-template-rows: auto
+    grid-template-areas: "main right"
+
+  &.content-left.content-right
+    display: grid
+    // grid-template-columns: 18rem auto 18rem
+    grid-template-columns: 18rem calc(100% - 36rem) 18rem
+    grid-template-rows: auto
+    grid-template-areas: "left main right"
+  &> .row
+    padding-left: 3rem
+    padding-right: 3rem
+    transition: padding 250ms ease-in-out
+  &.condensed
+    &> .row
+      padding-left: 6rem
+      padding-right: 6rem
+
+// Main Content
+// .main
+//   padding: 3rem
+
+// Grid Rows
+
+.row
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-gap: 2rem
+  // padding: 10rem 3rem
+
+  &.full-width
+    padding-left: 0
+    padding-right: 0
+
+// Grid Columns
+
+.col, .col-1
+  grid-column: auto / span 1
+
+.col-2
+  grid-column: auto / span 2
+
+.col-3
+  grid-column: auto / span 3
+
+.col-4
+  grid-column: auto / span 4
+
+.col-5
+  grid-column: auto / span 5
+
+.col-6
+  grid-column: auto / span 6
+
+.col-7
+  grid-column: auto / span 7
+
+.col-8
+  grid-column: auto / span 8
+
+.col-9
+  grid-column: auto / span 9
+
+.col-10
+  grid-column: auto / span 10
+
+.col-11
+  grid-column: auto / span 11
+
+.col-12
+  grid-column: auto / span 12
+
+// Grid Setup Breakpoints
+@media only screen and (min-width: 1601px)
+  .max-col, .max-col-1
+    grid-column: auto / span 1
+
+  .max-col-2
+    grid-column: auto / span 2
+
+  .max-col-3
+    grid-column: auto / span 3
+
+  .max-col-4
+    grid-column: auto / span 4
+
+  .max-col-5
+    grid-column: auto / span 5
+
+  .max-col-6
+    grid-column: auto / span 6
+
+  .max-col-7
+    grid-column: auto / span 7
+
+  .max-col-8
+    grid-column: auto / span 8
+
+  .max-col-9
+    grid-column: auto / span 9
+
+  .max-col-10
+    grid-column: auto / span 10
+
+  .max-col-11
+    grid-column: auto / span 11
+
+  .max-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 1600px)
+  .xxl-col, .xxl-col-1
+    grid-column: auto / span 1
+
+  .xxl-col-2
+    grid-column: auto / span 2
+
+  .xxl-col-3
+    grid-column: auto / span 3
+
+  .xxl-col-4
+    grid-column: auto / span 4
+
+  .xxl-col-5
+    grid-column: auto / span 5
+
+  .xxl-col-6
+    grid-column: auto / span 6
+
+  .xxl-col-7
+    grid-column: auto / span 7
+
+  .xxl-col-8
+    grid-column: auto / span 8
+
+  .xxl-col-9
+    grid-column: auto / span 9
+
+  .xxl-col-10
+    grid-column: auto / span 10
+
+  .xxl-col-11
+    grid-column: auto / span 11
+
+  .xxl-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 1440px)
+  .xl-col, .xl-col-1
+    grid-column: auto / span 1
+
+  .xl-col-2
+    grid-column: auto / span 2
+
+  .xl-col-3
+    grid-column: auto / span 3
+
+  .xl-col-4
+    grid-column: auto / span 4
+
+  .xl-col-5
+    grid-column: auto / span 5
+
+  .xl-col-6
+    grid-column: auto / span 6
+
+  .xl-col-7
+    grid-column: auto / span 7
+
+  .xl-col-8
+    grid-column: auto / span 8
+
+  .xl-col-9
+    grid-column: auto / span 9
+
+  .xl-col-10
+    grid-column: auto / span 10
+
+  .xl-col-11
+    grid-column: auto / span 11
+
+  .xl-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 1280px)
+  // Main Content
+  // .main
+  //   padding: 2rem
+
+  .content
+    &> .row
+      padding-left: 2rem
+      padding-right: 2rem
+    &.condensed
+      &> .row
+        padding-left: 3rem
+        padding-right: 3rem
+
+  .lg-col, .lg-col-1
+    grid-column: auto / span 1
+
+  .lg-col-2
+    grid-column: auto / span 2
+
+  .lg-col-3
+    grid-column: auto / span 3
+
+  .lg-col-4
+    grid-column: auto / span 4
+
+  .lg-col-5
+    grid-column: auto / span 5
+
+  .lg-col-6
+    grid-column: auto / span 6
+
+  .lg-col-7
+    grid-column: auto / span 7
+
+  .lg-col-8
+    grid-column: auto / span 8
+
+  .lg-col-9
+    grid-column: auto / span 9
+
+  .lg-col-10
+    grid-column: auto / span 10
+
+  .lg-col-11
+    grid-column: auto / span 11
+
+  .lg-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 1120px)
+  .row
+    grid-gap: 1rem
+
+  .md-col, .md-col-1
+    grid-column: auto / span 1
+
+  .md-col-2
+    grid-column: auto / span 2
+
+  .md-col-3
+    grid-column: auto / span 3
+
+  .md-col-4
+    grid-column: auto / span 4
+
+  .md-col-5
+    grid-column: auto / span 5
+
+  .md-col-6
+    grid-column: auto / span 6
+
+  .md-col-7
+    grid-column: auto / span 7
+
+  .md-col-8
+    grid-column: auto / span 8
+
+  .md-col-9
+    grid-column: auto / span 9
+
+  .md-col-10
+    grid-column: auto / span 10
+
+  .md-col-11
+    grid-column: auto / span 11
+
+  .md-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 960px)
+  .content
+    &.content-left, &.content-right, &.content-left.content-right
+      display: grid
+      grid-template-columns: 100%
+      grid-template-rows: auto
+      grid-template-areas: "main"
+
+  // Main Content
+  // .main
+  //   padding: 1.5rem
+
+  .panel-right
+    display: none
+
+  .sm-col, .sm-col-1
+    grid-column: auto / span 1
+
+  .sm-col-2
+    grid-column: auto / span 2
+
+  .sm-col-3
+    grid-column: auto / span 3
+
+  .sm-col-4
+    grid-column: auto / span 4
+
+  .sm-col-5
+    grid-column: auto / span 5
+
+  .sm-col-6
+    grid-column: auto / span 6
+
+  .sm-col-7
+    grid-column: auto / span 7
+
+  .sm-col-8
+    grid-column: auto / span 8
+
+  .sm-col-9
+    grid-column: auto / span 9
+
+  .sm-col-10
+    grid-column: auto / span 10
+
+  .sm-col-11
+    grid-column: auto / span 11
+
+  .sm-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 800px)
+  .xs-col, .xs-col-1
+    grid-column: auto / span 1
+
+  .xs-col-2
+    grid-column: auto / span 2
+
+  .xs-col-3
+    grid-column: auto / span 3
+
+  .xs-col-4
+    grid-column: auto / span 4
+
+  .xs-col-5
+    grid-column: auto / span 5
+
+  .xs-col-6
+    grid-column: auto / span 6
+
+  .xs-col-7
+    grid-column: auto / span 7
+
+  .xs-col-8
+    grid-column: auto / span 8
+
+  .xs-col-9
+    grid-column: auto / span 9
+
+  .xs-col-10
+    grid-column: auto / span 10
+
+  .xs-col-11
+    grid-column: auto / span 11
+
+  .xs-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 640px)
+  // Main Content
+  // .main
+  //   padding: 1.25rem
+
+  // .row
+  //   padding-left: 1.25rem
+  //   padding-right: 1.25rem
+  .content
+    &> .row
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+    &.condensed
+      &> .row
+        padding-left: 1.5rem
+        padding-right: 1.5rem
+
+  .xxs-col, .xxs-col-1
+    grid-column: auto / span 1
+
+  .xxs-col-2
+    grid-column: auto / span 2
+
+  .xxs-col-3
+    grid-column: auto / span 3
+
+  .xxs-col-4
+    grid-column: auto / span 4
+
+  .xxs-col-5
+    grid-column: auto / span 5
+
+  .xxs-col-6
+    grid-column: auto / span 6
+
+  .xxs-col-7
+    grid-column: auto / span 7
+
+  .xxs-col-8
+    grid-column: auto / span 8
+
+  .xxs-col-9
+    grid-column: auto / span 9
+
+  .xxs-col-10
+    grid-column: auto / span 10
+
+  .xxs-col-11
+    grid-column: auto / span 11
+
+  .xxs-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 480px)
+  .xxxs-col, .xxxs-col-1
+    grid-column: auto / span 1
+
+  .xxxs-col-2
+    grid-column: auto / span 2
+
+  .xxxs-col-3
+    grid-column: auto / span 3
+
+  .xxxs-col-4
+    grid-column: auto / span 4
+
+  .xxxs-col-5
+    grid-column: auto / span 5
+
+  .xxxs-col-6
+    grid-column: auto / span 6
+
+  .xxxs-col-7
+    grid-column: auto / span 7
+
+  .xxxs-col-8
+    grid-column: auto / span 8
+
+  .xxxs-col-9
+    grid-column: auto / span 9
+
+  .xxxs-col-10
+    grid-column: auto / span 10
+
+  .xxxs-col-11
+    grid-column: auto / span 11
+
+  .xxxs-col-12
+    grid-column: auto / span 12
+
+@media only screen and (max-width: 320px)
+  .min-col, .min-col-1
+    grid-column: auto / span 1
+
+  .min-col-2
+    grid-column: auto / span 2
+
+  .min-col-3
+    grid-column: auto / span 3
+
+  .min-col-4
+    grid-column: auto / span 4
+
+  .min-col-5
+    grid-column: auto / span 5
+
+  .min-col-6
+    grid-column: auto / span 6
+
+  .min-col-7
+    grid-column: auto / span 7
+
+  .min-col-8
+    grid-column: auto / span 8
+
+  .min-col-9
+    grid-column: auto / span 9
+
+  .min-col-10
+    grid-column: auto / span 10
+
+  .min-col-11
+    grid-column: auto / span 11
+
+  .min-col-12
+    grid-column: auto / span 12
