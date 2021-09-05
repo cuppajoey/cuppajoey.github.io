@@ -96,7 +96,9 @@
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 2rem; }
+  grid-gap: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem; }
   .row.full-width {
     padding-left: 0;
     padding-right: 0; }
