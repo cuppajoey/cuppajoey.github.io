@@ -100,10 +100,6 @@
   .row.full-width {
     padding-left: 0;
     padding-right: 0; }
-  .row.gapless {
-    grid-gap: 0; }
-  .row.gapless-shim {
-    grid-gap: 0.0625rem; }
 
 .col, .col-1 {
   grid-column: auto / span 1; }
@@ -615,6 +611,12 @@ img {
   margin-right: auto;
   padding-left: 3rem;
   padding-right: 3rem; }
+
+.row.gapless {
+  grid-gap: 0; }
+
+.row.gapless-shim {
+  grid-gap: 0.0625rem; }
 
 .bg-blur-1 {
   -webkit-backdrop-filter: blur(1rem);

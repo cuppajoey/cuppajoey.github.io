@@ -32,3 +32,13 @@ img
     margin-right: auto
     padding-left: 3rem
     padding-right: 3rem
+
+// Grid overwites
+.row
+    &.gapless
+        grid-gap: 0
+
+    // For a gapless effect for grid with column borders
+    // use with .outline on each child column
+    &.gapless-shim
+        grid-gap: 0.0625rem
