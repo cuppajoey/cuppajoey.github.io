@@ -100,6 +100,10 @@
   .row.full-width {
     padding-left: 0;
     padding-right: 0; }
+  .row.gapless {
+    grid-gap: 0; }
+  .row.gapless-shim {
+    grid-gap: 0.0625rem; }
 
 .col, .col-1 {
   grid-column: auto / span 1; }
@@ -433,6 +437,18 @@
   --bg-2-inverse: #13131B;
   --bg-3-inverse: #262734; }
 
+.border {
+  border: 0.0625rem solid #B7BECC; }
+
+.border-inverse {
+  border: 0.0625rem solid #3B3D4E; }
+
+.outline {
+  outline: 0.0625rem solid #B7BECC; }
+
+.outline-inverse {
+  outline: 0.0625rem solid #3B3D4E; }
+
 .bg-1 {
   background-color: var(--bg-1); }
 
@@ -522,7 +538,7 @@ body {
   line-height: 1.5;
   color: var(--text-3); }
 
-.heading-1, .heading-2, .heading-3, .heading-4, .display-1 {
+.heading-1, .heading-2, .heading-3, .heading-4, .display-1, .display-2 {
   font-family: "Cooper", "Times New Roman", sans-serif;
   font-weight: 300;
   line-height: 1.25;
@@ -551,7 +567,7 @@ body {
   font-weight: 300;
   letter-spacing: 0.04rem; }
 
-.body-large {
+.body-lg {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.6; }
@@ -619,6 +635,9 @@ img {
 
 .pad-1 {
   padding: 1rem; }
+
+.pad-1_5 {
+  padding: 1.5rem; }
 
 .pad-2 {
   padding: 2rem; }

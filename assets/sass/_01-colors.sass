@@ -30,8 +30,23 @@ $bg-2-inverse: var(--bg-2-inverse)
 $bg-3-inverse: var(--bg-3-inverse)
 
 // Borders
-$border: 0.1rem solid #B7BECC
-$border-inverse: 0.1rem solid #3B3D4E
+// ref: 0.0625rem = 1px
+$border: 0.0625rem solid #B7BECC
+$border-inverse: 0.0625rem solid #3B3D4E
+
+.border
+    border: $border
+.border-inverse
+    border: $border-inverse
+
+// Outlines
+$outline: 0.0625rem solid #B7BECC
+$outline-inverse: 0.0625rem solid #3B3D4E
+
+.outline
+    outline: $outline
+.outline-inverse
+    outline: $outline-inverse
 
 // Color Classes
 @for $i from 1 through 3
