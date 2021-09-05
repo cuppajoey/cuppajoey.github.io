@@ -96,9 +96,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 2rem;
-  padding-left: 3rem;
-  padding-right: 3rem; }
+  grid-gap: 2rem; }
   .row.full-width {
     padding-left: 0;
     padding-right: 0; }
@@ -614,7 +612,9 @@ img {
 .wrapper {
   max-width: 1360px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem; }
 
 .bg-blur-1 {
   -webkit-backdrop-filter: blur(1rem);
