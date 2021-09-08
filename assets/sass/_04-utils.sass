@@ -40,8 +40,8 @@
 //   color: var(--gray-0)
 // .text-gray-1
 //   color: var(--gray-1)
-// .text-gray-2
-//   color: var(--gray-2)
+// .text-text--text-2-inverse
+//   color: var(--text-2-inverse)
 // .text-gray-3
 //   color: var(--gray-3)
 // .text-gray-4
@@ -88,8 +88,8 @@
 //   background-color: var(--gray-0)
 // .bg-gray-1
 //   background-color: var(--gray-1)
-// .bg-gray-2
-//   background-color: var(--gray-2)
+// .bg-text--text-2-inverse
+//   background-color: var(--text-2-inverse)
 // .bg-gray-3
 //   background-color: var(--gray-3)
 // .bg-gray-4
@@ -725,27 +725,27 @@
 
 // Border Classes
 .border
-  border: 1px solid var(--gray-2)
+  border: 1px solid var(--text-2-inverse)
 .border-top
-  border-top: 1px solid var(--gray-2)
+  border-top: 1px solid var(--text-2-inverse)
 .border-right
-  border-right: 1px solid var(--gray-2)
+  border-right: 1px solid var(--text-2-inverse)
 .border-btm
-  border-bottom: 1px solid var(--gray-2)
+  border-bottom: 1px solid var(--text-2-inverse)
 .border-left
-  border-left: 1px solid var(--gray-2)
+  border-left: 1px solid var(--text-2-inverse)
 
 // Border Shadow Classes
 .border-shadow
-  box-shadow: -1px 1px 0px 0px var(--gray-2) inset, 1px -1px 0px 0px var(--gray-2) inset
+  box-shadow: -1px 1px 0px 0px var(--text-2-inverse) inset, 1px -1px 0px 0px var(--text-2-inverse) inset
 .border-top-shadow
-  box-shadow: 0px 1px 0px 0px var(--gray-2) inset
+  box-shadow: 0px 1px 0px 0px var(--text-2-inverse) inset
 .border-right-shadow
-  box-shadow: -1px 0px 0px 0px var(--gray-2) inset
+  box-shadow: -1px 0px 0px 0px var(--text-2-inverse) inset
 .border-btm-shadow
-  box-shadow: 0px -1px 0px 0px var(--gray-2) inset
+  box-shadow: 0px -1px 0px 0px var(--text-2-inverse) inset
 .border-left-shadow
-  box-shadow: 1px 0px 0px 0px var(--gray-2) inset
+  box-shadow: 1px 0px 0px 0px var(--text-2-inverse) inset
 
 
 
@@ -768,42 +768,40 @@
 .sc-right-0
   right: 0
 
-// Flex
-.flex-col-rev
-  flex-direction: column-reverse
-
 .fit-content
   width: fit-content
 .max-content
   width: max-content
 .min-content
   width: min-content
+
+// Flex
 .flex
   display: flex
-.flex-row
-  display: flex
+.direction-row
   flex-direction: row
-.flex-col
-  display: flex
+.direction-col
   flex-direction: column
-.flex-justify-center
-  display: flex
-  justify-content: center
-.flex-align-center
-  display: flex
-  align-items: center
-.flex-justify-start
-  display: flex
-  justify-content: flex-start
-.flex-align-start
-  display: flex
+.direction-col-rev
+  flex-direction: column-reverse
+
+.align-start
   align-items: flex-start
-.flex-justify-end
-  display: flex
-  justify-content: flex-end
-.flex-align-end
-  display: flex
+.align-center
+  align-items: center
+.align-end
   align-items: flex-end
+
+.justify-center
+  justify-content: center
+.justify-start
+  justify-content: flex-start
+.justify-end
+  justify-content: flex-end
+.justify-space-around
+  justify-content: space-around
+.justify-space-between
+  justify-content: space-between
 
 .block
   display: block
