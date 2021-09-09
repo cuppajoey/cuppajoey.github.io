@@ -1011,6 +1011,23 @@ input[type="submit"] {
   input[type="submit"]:hover {
     background-color: var(--bg-1); }
 
+a {
+  color: var(--text-2-inverse);
+  -webkit-transition: color 100ms ease-in-out;
+  -o-transition: color 100ms ease-in-out;
+  transition: color 100ms ease-in-out; }
+  a:hover {
+    color: var(--text-1-inverse); }
+
+.site-branding {
+  max-height: 2.5rem;
+  width: auto; }
+
+.main-nav a {
+  display: inline-block;
+  margin-right: 3rem;
+  text-decoration: none; }
+
 .social-nav {
   display: -webkit-box;
   display: -webkit-flex;
