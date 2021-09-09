@@ -1042,6 +1042,16 @@ a {
   .social-nav img {
     width: auto; }
 
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 85%; }
+  .main-nav {
+    margin-top: 1rem; }
+    .main-nav a {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem; } }
+
 .bg-blur-1 {
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem); }
