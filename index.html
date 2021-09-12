@@ -13,10 +13,10 @@
           <img class="site-branding" src="./assets/img/cuppa-joey-3.svg" alt="Joseph Schultz' Logo">
         </div>
         <nav class="main-nav col-7 sm-col-12 col-start-6 sm-col-start-1">
-          <a href="#about" class="label-sm">About Me</a>
-          <a href="#projects" class="label-sm">My Work</a>
-          <a href="#resume" class="label-sm">My Resume</a>
-          <a href="#contact" class="label-sm">Contact Me</a>
+          <a href="#about" class="label-sm" data-scroll>About Me</a>
+          <a href="#projects" class="label-sm" data-scroll>My Work</a>
+          <a href="#resume" class="label-sm" data-scroll>My Resume</a>
+          <a href="#contact" class="label-sm" data-scroll>Contact Me</a>
         </nav>
       </div>
     </header>
@@ -207,27 +207,8 @@
         </div>
       </div>
     </footer>
-    <script>
-      var form = document.getElementById("cjContact");
-      
-      async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("formResponse");
-        var data = new FormData(event.target);
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-              'Accept': 'application/json'
-          }
-        }).then(response => {
-          status.innerHTML = "Thanks for reaching out, I'll get back to you as soon as I can!";
-          form.reset()
-        }).catch(error => {
-          status.innerHTML = "Oops! There was a problem submitting your form. Do you mind trying again?"
-        });
-      }
-      form.addEventListener("submit", handleSubmit)
-  </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
   </body>
 </html>
