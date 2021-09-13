@@ -94,4 +94,4 @@ function copy() {
  */
 exports.deploy = deploy;
 exports.copy = copy;
-exports.default = series(compileSass, watchSass);
+exports.default = series(deploySass, watchSass);
