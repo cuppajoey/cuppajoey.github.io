@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Joseph Schultz | Front-End Developer</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body class="body">
     <header class="header bg-2-inverse pad-top-3">
       <div class="wrapper row align-center">
         <div class="col-4 sm-col-12">
-          <img class="site-branding" src="./assets/img/cuppa-joey-3.svg" alt="Joseph Schultz' Logo">
+          <img class="site-branding" src="./assets/img/cuppa-joey-3.svg" alt="Joseph Schultz" data-aos="fade-in">
         </div>
         <nav class="main-nav col-7 sm-col-12 col-start-6 sm-col-start-1">
-          <a href="#about" class="label-sm" data-scroll>About Me</a>
-          <a href="#projects" class="label-sm" data-scroll>My Work</a>
-          <a href="#resume" class="label-sm" data-scroll>My Resume</a>
-          <a href="#contact" class="label-sm" data-scroll>Contact Me</a>
+          <a href="#about" class="label-sm" data-scroll data-aos="fade-in">About Me</a>
+          <a href="#projects" class="label-sm" data-scroll data-aos="fade-in">My Work</a>
+          <a href="#resume" class="label-sm" data-scroll data-aos="fade-in">My Resume</a>
+          <a href="#contact" class="label-sm" data-scroll data-aos="fade-in">Contact Me</a>
         </nav>
       </div>
     </header>
@@ -26,13 +27,13 @@
           <div class="wrapper row">
             <div class="col-4 xxl-col-4 sm-col-12">
               <figure>
-                <img src="./assets/img/Joseph-Schultz-Headshot.png" alt="Headshot of Joseph Schultz">
+                <img src="./assets/img/Joseph-Schultz-Headshot.png" alt="Headshot of Joseph Schultz" data-aos="fade-right" data-aos-delay="500">
               </figure>
             </div>
             <div class="col-7 xxl-col-7 sm-col-12 col-start-6 sm-col-start-1 flex direction-col justify-center">
-              <h2 class="display-2 mar-btm-1 text-1-inverse">Hi, I'm Joseph,</h2>
-              <p class="body-display mar-btm-2 text-2-inverse">a front-end developer and designer passionate about learning, creating and self-reflection. I'm smart enough to know I don't know it all, yet crazy enough to believe I can learn anything.</p>
-              <p class="body-display text-2-inverse">While I'm confident calling myself a developer, designer, and an artist, professionally, my focus is front-end software development. With 7+ years designing and developing websites, I'm comfortable carrying a project from start to finish, but I believe the best work is produced by a collaborative team.</p>
+              <h2 class="display-2 mar-btm-1 text-1-inverse" data-aos="fade-up" data-aos-delay="750">Hi, I'm Joseph,</h2>
+              <p class="body-display mar-btm-2 text-2-inverse" data-aos="fade-up" data-aos-delay="900">a front-end developer and designer passionate about learning, creating and self-reflection. I'm smart enough to know I don't know it all, yet crazy enough to believe I can learn anything.</p>
+              <p class="body-display text-2-inverse" data-aos="fade-up" data-aos-delay="1000">While I'm confident calling myself a developer, designer, and an artist, professionally, my focus is front-end software development. With 7+ years designing and developing websites, I'm comfortable carrying a project from start to finish, but I believe the best work is produced by a collaborative team.</p>
             </div>
           </div>
         </section>
@@ -208,6 +209,10 @@
       </div>
     </footer>
     
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>  
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script type="text/javascript" src="./assets/js/app.js"></script>
   </body>
