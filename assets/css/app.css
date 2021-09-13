@@ -1046,16 +1046,6 @@ a {
   .social-nav img {
     width: auto; }
 
-@media only screen and (max-width: 960px) {
-  html {
-    font-size: 85%; }
-  .main-nav {
-    margin-top: 1rem; }
-    .main-nav a {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 1rem; } }
-
 .bg-blur-1 {
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem); }
@@ -1964,3 +1954,25 @@ a {
 
 .text-right {
   text-align: right; }
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 85%; }
+  .main-nav {
+    margin-top: 1rem; }
+    .main-nav a {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem; }
+  .display-1 {
+    font-size: 4rem; }
+  .display-2 {
+    font-size: 3rem; }
+  .heading-1 {
+    font-size: 2.5rem; }
+  .heading-2 {
+    font-size: 2rem; }
+  .heading-3 {
+    font-size: 1.5rem; }
+  .heading-4 {
+    font-size: 1.25rem; } }
