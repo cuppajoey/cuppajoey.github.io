@@ -993,7 +993,8 @@ input, select, textarea {
   border: none;
   border-bottom: 1px solid var(--bg-3);
   color: var(--text-2-inverse);
-  font-size: 1rem; }
+  font-size: 1rem;
+  -webkit-appearance: none; }
   input:focus, select:focus, textarea:focus {
     border-bottom: 1px solid var(--bg-1); }
 
