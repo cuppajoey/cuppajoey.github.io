@@ -991,6 +991,8 @@ input, select, textarea {
   margin-bottom: 2rem;
   background: var(--bg-3-inverse);
   border: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   border-bottom: 1px solid var(--bg-3);
   color: var(--text-2-inverse);
   font-size: 1rem;
