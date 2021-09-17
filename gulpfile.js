@@ -1,5 +1,5 @@
 const { src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const prefix = require('gulp-autoprefixer');
 const runSequence = require('run-sequence');
 const zip = require('gulp-zip');
