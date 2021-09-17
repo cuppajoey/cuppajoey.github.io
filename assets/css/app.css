@@ -1046,6 +1046,25 @@ a {
   .social-nav img {
     width: auto; }
 
+.footer {
+  position: relative; }
+  .footer::before {
+    content: '';
+    background-image: url(../img/coffee-ring.svg);
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0.8;
+    -webkit-transform: translate(-155px, -125px);
+        -ms-transform: translate(-155px, -125px);
+            transform: translate(-155px, -125px);
+    z-index: 1; }
+  .footer .wrapper {
+    position: relative;
+    z-index: 2; }
+
 .bg-blur-1 {
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem); }

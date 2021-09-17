@@ -100,3 +100,21 @@ a
         margin: 0.5rem
     img
         width: auto
+
+.footer
+    position: relative
+    &::before
+        content: ''
+        background-image: url(../img/coffee-ring.svg)
+        width: 250px
+        height: 250px
+        position: absolute
+        left: 50%
+        top: 50%
+        opacity: 0.8
+        transform: translate(-155px, -125px)
+        z-index: 1
+    
+    .wrapper
+        position: relative
+        z-index: 2
