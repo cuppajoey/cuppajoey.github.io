@@ -51,8 +51,12 @@ img
 a
     color: var(--light-accent)
     transition: color 100ms ease-in-out
+    text-decoration-thickness: 1.5px
+    text-underline-offset: 0.2em
     &:hover
         text-decoration: none
+    &:visited
+        color: #c036ec
 
 // Header
 .site-branding
@@ -63,7 +67,10 @@ a
         display: inline-block
         margin-right: 3rem
         text-decoration: none
+        text-underline-offset: 0.5em
         color: var(--dark-accent)
+        &:hover
+            text-decoration: underline
 
 // Footer
 .social-nav

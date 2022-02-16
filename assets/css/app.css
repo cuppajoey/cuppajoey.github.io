@@ -1616,9 +1616,14 @@ a {
   -webkit-transition: color 100ms ease-in-out;
   -o-transition: color 100ms ease-in-out;
   transition: color 100ms ease-in-out;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
 }
 a:hover {
   text-decoration: none;
+}
+a:visited {
+  color: #c036ec;
 }
 
 .site-branding {
@@ -1630,7 +1635,11 @@ a:hover {
   display: inline-block;
   margin-right: 3rem;
   text-decoration: none;
+  text-underline-offset: 0.5em;
   color: var(--dark-accent);
+}
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 .social-nav {
