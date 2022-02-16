@@ -3,3 +3,6 @@ node_modules
 
 # 11ty build folder
 _site/
+
+# VS Code
+*.code-workspace
