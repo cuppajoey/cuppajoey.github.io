@@ -1641,7 +1641,7 @@ a:visited {
 
 .main-nav a {
   display: inline-block;
-  margin-right: 3rem;
+  margin-left: 2rem;
   text-decoration: none;
   text-underline-offset: 0.5em;
   color: var(--dark-accent);
