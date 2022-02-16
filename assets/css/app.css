@@ -1611,41 +1611,6 @@ img {
   grid-gap: 0.0625rem;
 }
 
-input, select, textarea {
-  display: block;
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  background: var(--bg-3-inverse);
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid var(--bg-3);
-  color: var(--text-2-inverse);
-  font-size: 1rem;
-  -webkit-appearance: none;
-}
-input:focus, select:focus, textarea:focus {
-  border-bottom: 1px solid var(--bg-1);
-}
-
-label {
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-input[type=submit] {
-  font-size: 1rem;
-  background-color: var(--bg-3);
-  -webkit-transition: all 150ms ease-in-out;
-  -o-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-input[type=submit]:hover {
-  background-color: var(--bg-1);
-}
-
 a {
   color: var(--light-accent);
   -webkit-transition: color 100ms ease-in-out;
@@ -1705,6 +1670,65 @@ a:hover {
 .footer .wrapper {
   position: relative;
   z-index: 2;
+}
+
+fieldset {
+  padding: 1.5rem;
+  -webkit-padding-before: 1rem;
+          padding-block-start: 1rem;
+}
+
+legend {
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin-left: -1rem;
+}
+
+input[type=text], input[type=tel], input[type=password], select, textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: var(--bg-3);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--bg-3-inverse);
+  color: var(--text-2);
+  font-size: 1rem;
+  -webkit-appearance: none;
+}
+input[type=text]:focus, input[type=tel]:focus, input[type=password]:focus, select:focus, textarea:focus {
+  border-bottom: 1px solid var(--bg-1-inverse);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input[type=submit], input[type=reset] {
+  display: inline-block;
+  background-color: var(--light-accent);
+  color: var(--text-2-inverse);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=submit]:hover, input[type=reset]:hover {
+  background-color: var(--dark-accent);
+}
+
+input[type=reset] {
+  background-color: var(--bg-3-inverse);
+  color: var(--text-2-inverse);
+}
+input[type=reset]:hover {
+  background-color: var(--bg-1-inverse);
 }
 
 .bg-blur-1 {
