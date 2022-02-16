@@ -32,7 +32,17 @@
       {{ content | safe }}
     </main>
 
-    <footer></footer>
+    <footer class="footer bg-1-inverse pad-top-5 pad-btm-4">
+      <div class="wrapper flex direction-col align-center">
+        <img src="./assets/img/cj-icon.svg" height="30" alt="Icon of a coffee cup wearing a hat">
+        <p class="mar-top-1 mar-btm-1 heading-4 text-2-inverse">Thank you for visiting!</p>
+        <div class="social-nav">
+          <a href="https://github.com/cuppajoey"><img src="./assets/img/github.svg" alt="Github Logo" width="20" height="20"></a>
+          <a href="https://www.linkedin.com/in/cuppajoey"><img src="./assets/img/linkedin.svg" alt="LinkedIn Logo" width="20" height="20"></a>
+          <a href="https://instagram.com/cuppajoey"><img src="./assets/img/instagram.svg" alt="Instagram Logo" width="20" height="20"></a>
+        </div>
+      </div>
+    </footer>
 
     <script src="{{ 'https://unpkg.com/aos@next/dist/aos.js' | url }}"></script>
     <script>
