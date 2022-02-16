@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
+    <link rel="stylesheet" href="{{ 'https://unpkg.com/aos@next/dist/aos.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/app.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
   </head>
@@ -33,6 +33,15 @@
     </main>
 
     <footer></footer>
+
+    <script src="{{ 'https://unpkg.com/aos@next/dist/aos.js' | url }}"></script>
+    <script>
+      AOS.init({
+        disable: "mobile"
+      });
+    </script>  
+    <script src="{{ 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js' | url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/app.js' | url }}"></script>
 
     <!-- Current page: {{ page.url | url }} -->
   </body>
