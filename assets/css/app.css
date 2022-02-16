@@ -1618,7 +1618,7 @@ a {
   transition: color 100ms ease-in-out;
 }
 a:hover {
-  color: var(--text-1-inverse);
+  text-decoration: none;
 }
 
 .site-branding {
