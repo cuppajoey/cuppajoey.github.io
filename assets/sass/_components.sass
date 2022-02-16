@@ -1,0 +1,120 @@
+.btn
+  background-color: transparent
+  border: $outline-inverse
+  border-radius: 20rem
+  box-shadow: 0px 1px 2px $bg-1-inverse inset
+  color: $text-2-inverse
+  cursor: pointer
+  display: inline-block
+  font-size: 0.875rem
+  letter-spacing: 0.1rem
+  padding: 0.5rem 2rem
+  text-decoration: none
+  text-transform: uppercase
+  transition: all 150ms ease-in-out
+  -webkit-appearance: none
+
+  &:has(> .btn--icon)
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 0.5rem 1.25rem
+
+    &:hover
+      .btn--icon
+        opacity: 1
+        width: 14px
+        svg
+          min-height: 0.7rem
+          transform: scale(1)
+      .btn--label
+        margin-right: 1.75rem
+
+    .btn--label
+      margin-right: 0
+      transition: margin 150ms ease-in-out
+
+
+  &:hover
+    border-color: $accent-dark
+    color: $accent-dark
+
+  .btn--icon
+    opacity: 0
+    transition: opacity 150ms ease-in-out 50ms
+
+    svg
+      fill: $text-2-inverse
+      min-height: 0
+      transition: all 150ms ease-in-out
+      transform: scale(0)
+      transform-origin: center
+
+.card
+  border: $border-inverse
+  border-radius: 1rem
+  color: $text-2-inverse
+  display: flex
+  flex-direction: column
+  margin-bottom: 1.5rem
+  text-decoration: none
+  transition: all 150ms ease-in-out
+
+  .card--header
+    align-items: center
+    border-bottom: $border-inverse
+    border-color: inherit
+    display: flex
+    justify-content: space-between
+    padding: 1.2rem 1.5rem
+
+    .card--title
+      font-size: 1.5rem
+      line-height: 1.5
+      margin-bottom: 0
+      margin-top: 0
+
+  .card--body
+    padding: 1.25rem 1.5rem
+
+    & > *:last-child
+      margin-bottom: 0
+
+  .card--footer
+    border-top: $border-inverse
+    border-color: inherit
+    margin-top: auto
+    padding: 0.75rem 1.5rem
+
+    span
+      display: inline-block
+
+  &:not(div):hover
+    background-color: var(--bg-1-inverse)
+    color: $text-1-inverse
+    box-shadow: 0 2px 4px -2px inset var(--bg-2-inverse)
+
+    .btn
+      border-color: $accent-dark
+      color: $accent-dark
+
+      .btn--icon
+        opacity: 1
+        width: 14px
+
+        svg
+          fill: $accent-dark
+          min-height: 0.7rem
+          transform: scale(1)
+
+      .btn--label
+        margin-right: 1.75rem
+
+.card-grid
+
+  .card
+    grid-column: auto / span 4
+    margin-bottom: 0
+
+    @media only screen and (max-width: 960px)
+      grid-column: auto / span 6

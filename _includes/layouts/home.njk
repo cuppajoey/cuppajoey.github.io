@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+templateClass: home
+---
+
+{% from "components/Button.njk" import Button %}
+{% from "components/Card.njk" import Card %}
+{% from "components/CardGrid.njk" import CardGrid %}
+
+<div class="content">
+  <main class="main">
+    <section id="about" class="pad-top-3 pad-btm-3">
+      <div class="wrapper row">
+        <div class="col-5 xxl-col-5 sm-col-12">
+          <figure class="img mar-btm-4">
+            <img src="./assets/img/Joseph-Schultz-Headshot-square.png" alt="Headshot of Joseph Schultz">
+          </figure>
+          <h2 class="heading-2 mar-btm-1 mar-left-1 text-1-inverse">Hi, I’m Joseph,</h2>
+          <p class="body-text mar-btm-2 mar-left-1 text-2-inverse">a front-end engineer and designer dedicated to continuous learning, creative exploration and self-refinement.</p>
+        </div>
+        <div class="col-6 xxl-col-6 sm-col-12 col-start-7 sm-col-start-1 flex direction-col align-start">
+          {{ Card({
+            button: {label: 'Launch', show: true},
+            description: 'A selection of case studies showcasing my professional work and passion projects in software design and development.',
+            href: '/projects',
+            title: 'Projects'
+          })}}
+          {{ Card({
+            button: {label: 'Resume/CV', show: true},
+            description: 'Learn more about my professional experience, view my resume, or contact me for projects.',
+            href: '/about',
+            title: 'About me'
+          })}}
+          {{ Card({
+            description: 'A collection of doodles and digital artwork that showcase one of my favorite hobbies and pastimes. Coming soon.',
+            title: 'Illustrations'
+          })}}
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="pad-top-2 pad-btm-5">
+      <div class="wrapper">
+        <h2 class="heading-2 mar-btm-4 text-1-inverse">Projects &amp; Passions</h2> 
+        {% include "projectGrid.njk" %}
+    </section>
+  </main>
+</div>
+
+{{ content | safe }}

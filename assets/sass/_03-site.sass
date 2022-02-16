@@ -1,120 +1,245 @@
 *
-    box-sizing: border-box
-    margin: 0
-    padding: 0
+  box-sizing: border-box
+  margin: 0
+  padding: 0
 
 *::selection
-    background-color: $bg-1-inverse
-    color: $text-1-inverse
+  background-color: $bg-1-inverse
+  color: $text-1-inverse
 
 html
-    font-size: 100%
+  font-size: 16px
+  line-height: 24px
 
 body
-    margin: 0
-    padding: 0
-
-// [class*=col]
-//     background-color: $bg-1-inverse
-//     color: $text-1-inverse
-//     padding: 3rem 0 !important
-//     border: $border
+  margin: 0
+  padding: 0
 
 .img-placeholder
-    background-color: $bg-3
-    max-width: 100%
-    max-height: 100%
-    width: 400px
-    height: 530px
+  background-color: $bg-3
+  height: 530px
+  max-height: 100%
+  max-width: 100%
+  width: 400px
 
 img
-    width: 100%
+  width: 100%
+
+hr
+  border: none
+  border-top: $border-inverse
+  margin-bottom: 1rem
+  margin-top: 1rem
 
 .wrapper
-    max-width: 1360px
-    margin-left: auto
-    margin-right: auto
-    padding-left: 3rem
-    padding-right: 3rem
-
-// Grid overwites
-.row
-    &.gapless
-        grid-gap: 0
-
-    // For a gapless effect for grid with column borders
-    // use with .outline on each child column
-    &.gapless-shim
-        grid-gap: 0.0625rem
-
-// Forms
-input, select, textarea
-    display: block
-    width: 100%
-    padding: 1rem
-    margin-bottom: 2rem
-    background: $bg-3-inverse
-    border: none
-    border-radius: 0
-    border-bottom: 1px solid $bg-3
-    color: $text-2-inverse
-    font-size: 1rem
-    -webkit-appearance: none
-    &:focus
-        border-bottom: 1px solid $bg-1
-label
-    display: block
-    margin-bottom: 0.25rem
-
-input[type="submit"]
-    font-size: 1rem
-    background-color: $bg-3
-    transition: all 150ms ease-in-out
-    cursor: pointer
-    -webkit-appearance: none
-    &:hover
-        background-color: $bg-1
+  margin-left: auto
+  margin-right: auto
+  max-width: 1080px
+  padding-left: 3rem
+  padding-right: 3rem
 
 a
-    color: $text-2-inverse
-    transition: color 100ms ease-in-out
-    &:hover
-        color: $text-1-inverse
+  color: var(--light-accent)
+  text-decoration-thickness: 1.5px
+  text-underline-offset: 0.2em
+  transition: color 100ms ease-in-out
+  &:hover
+    text-decoration: none
+
+p > a
+  &:not(.btn):visited
+    color: $accent
+
+@mixin side-borders
+  &::after, &::before
+    content: ''
+    height: 100%
+    position: absolute
+    top: 0
+
+  &::after
+    border-right: $border-inverse
+    right: 1.5rem
+  
+  &::before
+    border-left: $border-inverse
+    left: 1.5rem
 
 // Header
-.site-branding
+.header
+  @include side-borders
+  border-bottom: $border-inverse
+  padding: 1.75rem 0
+  position: relative
+
+  .wrapper
+    align-items: center
+    display: flex
+    justify-content: space-between
+    position: relative
+
+  .site-branding
     max-height: 2.5rem
     width: auto
-.main-nav
+
+  nav
+    & > ul
+      margin: 0
+      padding: 0
+
+    .nav-item
+      display: inline-block
+      list-style: none
+
     a
-        display: inline-block
-        margin-right: 3rem
-        text-decoration: none
+      color: var(--text-2-inverse)
+      display: inline-block
+      margin-left: 2rem
+      text-decoration: none
+
+      &:hover
+        color: var(--dark-accent) !important
+
+      &:visited
+        color: var(--text-2-inverse)
+
+main
+  @include side-borders
+  position: relative
+
+.post-tag
+  border: 1px solid var(--dark-accent)
+  border-radius: 1rem
+  color: var(--dark-accent)
+  font-size: 0.75em
+  opacity: 0.9
+  padding: 0.25rem 0.75rem
+  text-decoration: none
+
+  &:hover
+    opacity: 1
+
+  &:visited
+    color: var(--text-1)
+
+.pagination
+  border-top: $border-inverse
+  margin-top: 3rem
+  padding-top: 3rem
+
+  display: grid
+  grid-template-areas: 'next prev'
+  grid-template-columns: 1fr 1fr
+  
+  .next
+    grid-area: next
+
+  .prev
+    grid-area: prev
+    text-align: right
+
+  a
+    display: block
 
 // Footer
 .social-nav
-    display: flex
-    justify-content: center
+  display: flex
+  justify-content: center
 
-    a
-        margin: 0.5rem
-    img
-        width: auto
+  a
+    margin: 0.5rem
+  img
+    width: auto
 
 .footer
+  @include side-borders
+  position: relative
+  
+  .wrapper
     position: relative
+    z-index: 2
+
+    &::after
+      border-bottom: $border-inverse
+      bottom: -2.5rem
+      content: ''
+      display: block
+      position: absolute
+      width: 100vw
+
     &::before
-        content: ''
-        background-image: url(../img/coffee-ring.svg)
-        width: 250px
-        height: 250px
-        position: absolute
-        left: 50%
-        top: 50%
-        opacity: 0.8
-        transform: translate(-155px, -125px)
-        z-index: 1
-    
-    .wrapper
-        position: relative
-        z-index: 2
+      content: ''
+      background-image: url(../img/coffee-ring.svg)
+      height: 200px
+      left: 50%
+      opacity: 0.8
+      position: absolute
+      top: 50%
+      transform: translate(-105px, -115px)
+      width: 200px
+      z-index: -1
+
+#space
+  height: 100vh
+  position: fixed
+  width: 100vw
+  z-index: -1
+
+figure.img
+  position: relative
+
+  img
+    border-radius: 1.5rem
+
+  &::before
+    border: $border-inverse
+    border-radius: 1.5rem
+    content: ''
+    display: block
+    height: 100%
+    left: 1.25rem
+    position: absolute
+    top: 1.25rem
+    width: 100%
+    z-index: -1
+
+.project-list
+  padding-bottom: 4rem
+  padding-top: 3rem
+
+.project
+  header
+    border-bottom: $border-inverse
+    margin-bottom: 2rem
+    padding-bottom: 1.5rem
+
+    h1
+      margin-bottom: 0
+
+    .meta
+      display: flex
+      
+      .label-sm:not(:first-child)
+        border-left: $border-inverse
+        margin-left: 1em
+        padding-left: 1em
+
+  p:has(img)
+    position: relative
+    margin-bottom: 2.5rem
+    z-index: 1
+
+    img
+      border-radius: 1.5rem
+
+    &::before
+      border: $border-inverse
+      border-radius: 1.5rem
+      content: ''
+      display: block
+      height: 100%
+      left: 0.75rem
+      position: absolute
+      top: 0.75rem
+      width: 100%
+      z-index: -1

@@ -1,0 +1,21 @@
+{% from "./Icon.njk" import Icon %}
+
+{% macro Card(props) %}
+  {% if props.href %} <a class="card" href="{{ props.href }}"> {% else %} <div class="card"> {% endif %}
+    <div class="card--header">
+      <h3 class="card--title">{{ props.title }}</h3>
+      {% if props.button.show == true %}
+        <span class="btn btn-faux">
+          <span class="btn--label">{{ props.button.label }}</span>
+          <span class="btn--icon">{{ Icon() }}</span>
+        </span>
+      {% endif %}
+    </div>
+    <div class="card--body">
+      <p>{{ props.description }}</p>
+    </div>
+    {% if props.label %}
+      <div class="card--footer"><span class="post-tag">{{ props.label }}</span></div>
+    {% endif %}
+  {% if props.href %} </a> {% else %} </div> {% endif %}
+{% endmacro %}

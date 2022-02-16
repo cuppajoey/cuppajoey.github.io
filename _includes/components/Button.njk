@@ -1,0 +1,12 @@
+{% from "./Icon.njk" import Icon %}
+
+{% macro Button(props) %}
+  {% if props.href %}
+    <a class="btn btn--primary" href="{{ props.href }}">
+      <span class="btn--label"> {{ props.label }} </span>
+      {% if props.icon %} <span class="btn--icon">{{ Icon() }}</span> {% endif %}
+    </a>
+  {% else %}
+    <span class="btn btn--primary">{{ props.label }}</span>
+  {% endif %}
+{% endmacro %}

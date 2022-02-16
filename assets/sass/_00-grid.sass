@@ -30,13 +30,11 @@
 
 .aside-left
   grid-area: left
-  // position: fixed
   position: relative
   width: 18rem
 
 .aside-right
   grid-area: right
-  // position: fixed
   position: relative
 
 // Grid Setup
@@ -64,7 +62,6 @@
 
   &.content-left
     display: grid
-    // grid-template-columns: 18rem auto
     grid-template-columns: 18rem calc(100% - 18rem)
     grid-template-rows: auto
     grid-template-areas: "left main"
@@ -77,7 +74,6 @@
 
   &.content-left.content-right
     display: grid
-    // grid-template-columns: 18rem auto 18rem
     grid-template-columns: 18rem calc(100% - 36rem) 18rem
     grid-template-rows: auto
     grid-template-areas: "left main right"
@@ -90,17 +86,10 @@
       padding-left: 6rem
       padding-right: 6rem
 
-// Main Content
-// .main
-//   padding: 3rem
-
-// Grid Rows
-
 .row
   display: grid
   grid-template-columns: repeat(12, 1fr)
   grid-gap: 2rem
-  // padding: 10rem 3rem
 
   &.full-width
     padding-left: 0
