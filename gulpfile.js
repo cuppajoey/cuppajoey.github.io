@@ -21,7 +21,7 @@ const touch = () => through2.obj( function( file, enc, cb ) {
  */
 function compileSass(done) {
     src('assets/sass/app.sass')
-    .pipe(sass({ includePaths: ['sass'], outputStyle: 'uncompressed' })
+    .pipe(sass({ includePaths: ['sass'] })
         .on('error', sass.logError)
     )
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
