@@ -97,6 +97,10 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   });
 
+  eleventyConfig.setBrowserSyncConfig({
+    files: "./_site/assets/css/**/*.css"
+  });
+
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid
