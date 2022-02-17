@@ -9,3 +9,6 @@ _site/
 
 # MAC OS
 .DS_Store
+
+# Sass
+*.css.map
