@@ -2,19 +2,19 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<section id="about" class="bg-2-inverse pad-top-7 pad-btm-7">
+<section id="about" class="bg-2-inverse pad-top-7 pad-btm-5">
     <div class="wrapper" style="max-width: 960px;">
         <div class="">
-            <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-            <h1 class="display-2 mar-btm-1 text-1-inverse">{{ title }}</h1>
+            <time datetime="{{ page.date | htmlDateString }}" class="label-sm text-3">{{ page.date | readableDate }}</time>
+            <h1 class="display-2 mar-btm-2 mar-top-05 text-1-inverse">{{ title }}</h1>
             {%- for tag in tags | filterTagList -%}
-            {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-            <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+                {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+                <a href="{{ tagUrl | url }}" class="post-tag label-sm">{{ tag }}</a>
             {%- endfor %}
         </div>
     </div>
 </section>
-<div class="bg-2 pad-top-7 pad-btm-7">
+<div class="bg-3 pad-top-5 pad-btm-5">
     <div class="wrapper" style="max-width: 960px;">
     
 
