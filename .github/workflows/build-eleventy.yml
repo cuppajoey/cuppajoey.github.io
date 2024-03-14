@@ -1,0 +1,22 @@
+name: Eleventy Build
+on:
+  pull_request:
+    types:
+      - closed
+  push:
+    branches: [$default-branch]
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build
+        uses: TartanLlama/actions-eleventy@master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          install_dependencies: true
+          publish_dir: _site 
+          publish_branch: gh-pages
