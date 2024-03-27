@@ -1,0 +1,12 @@
+{% from "components/Card.njk" import Card %}
+
+<div class="card-grid project-grid row">
+  {% for project in collections.projects | sort(true, false, 'data.year') %}
+    {{ Card({
+      description: project.data.description,
+      href: project.url,
+      label: project.data.type,
+      title: project.data.title
+    })}}
+  {% endfor %}
+</div>

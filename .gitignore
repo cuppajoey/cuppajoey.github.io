@@ -1,2 +1,14 @@
 # Node Modules
 node_modules
+
+# 11ty build folder
+_site/
+
+# VS Code
+*.code-workspace
+
+# MAC OS
+.DS_Store
+
+# Sass
+*.css.map

@@ -1,17 +1,20 @@
 /* CSS color scheme */
 \:root
-    --text-1: #13131B
-    --text-2: #3B3D4E
-    --text-3: #686D80
-    --text-1-inverse: #FFFFFF
-    --text-2-inverse: #D5DBE6
-    --text-3-inverse: #9BA2B3
-    --bg-1: #FFFFFF
-    --bg-2: #F5F8FF
-    --bg-3: #D5DBE6
-    --bg-1-inverse: #07070D
-    --bg-2-inverse: #13131B
-    --bg-3-inverse: #262734
+  --text-1: #13131B
+  --text-2: #3B3D4E
+  --text-3: #686D80
+  --text-1-inverse: #FFFFFF
+  --text-2-inverse: #D5DBE6
+  --text-3-inverse: #9BA2B3
+  --bg-1: #FFFFFF
+  --bg-2: #F5F8FF
+  --bg-3: #D5DBE6
+  --bg-1-inverse: #07070D
+  --bg-2-inverse: #13131B
+  --bg-3-inverse: #262734
+  --accent: #b953d9
+  --light-accent: #5400cb
+  --dark-accent: #bb86fb
 
 // Text Colors
 $text-1: var(--text-1)
@@ -20,6 +23,10 @@ $text-3: var(--text-3)
 $text-1-inverse: var(--text-1-inverse)
 $text-2-inverse: var(--text-2-inverse)
 $text-3-inverse: var(--text-3-inverse)
+
+$accent: var(--accent)
+$accent-dark: var(--dark-accent)
+$accent-light: var(--light-accent)
 
 // Background Colors
 $bg-1: var(--bg-1)
@@ -35,26 +42,26 @@ $border: 0.0625rem solid #B7BECC
 $border-inverse: 0.0625rem solid #3B3D4E
 
 .border
-    border: $border
+  border: $border
 .border-inverse
-    border: $border-inverse
+  border: $border-inverse
 
 // Outlines
 $outline: 0.0625rem solid #B7BECC
 $outline-inverse: 0.0625rem solid #3B3D4E
 
 .outline
-    outline: $outline
+  outline: $outline
 .outline-inverse
-    outline: $outline-inverse
+  outline: $outline-inverse
 
 // Color Classes
 @for $i from 1 through 3
-    .bg-#{$i}
-        background-color: var(--bg-#{$i})
-    .bg-#{$i}-inverse
-        background-color: var(--bg-#{$i}-inverse)
-    .text-#{$i}
-        color: var(--text-#{$i})
-    .text-#{$i}-inverse
-        color: var(--text-#{$i}-inverse)
+  .bg-#{$i}
+    background-color: var(--bg-#{$i})
+  .bg-#{$i}-inverse
+    background-color: var(--bg-#{$i}-inverse)
+  .text-#{$i}
+    color: var(--text-#{$i})
+  .text-#{$i}-inverse
+    color: var(--text-#{$i}-inverse)
