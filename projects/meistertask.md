@@ -2,6 +2,7 @@
 title: MeisterTask
 description: An unofficial PHP client library for working with the MeisterTask API.
 layout: layouts/project.njk
+publishedDate: 2019
 year: 2019
 tags: projects
 type: PHP Client Library

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ 'https://unpkg.com/aos@next/dist/aos.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/app.css' | url }}">
   </head>
-  <body class="body bg-2-inverse">
+  <body class="body dark-theme">
     <header class="header">
       <div class="wrapper">
         <div>
@@ -20,7 +20,7 @@
           <ul>
             {%- for entry in collections.all | eleventyNavigation %}
               <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}">
-                <a href="{{ entry.url | url }}" class="label-sm" data-scroll data-aos="fade-in">{{ entry.title }}</a>
+                <a href="{{ entry.url | url }}" data-scroll data-aos="fade-in">{{ entry.title }}</a>
               </li>
             {%- endfor %}
           </ul>
@@ -32,10 +32,10 @@
       {{ content | safe }}
     </main>
 
-    <footer class="footer bg-1-inverse pad-top-5 pad-btm-4">
+    <footer class="footer pad-top-5 pad-btm-4">
       <div class="wrapper flex direction-col align-center">
         <img src="/assets/img/cj-icon.svg" height="30" alt="Icon of a coffee cup wearing a hat">
-        <p class="mar-top-1 mar-btm-1 heading-4 text-2-inverse">Thank you for visiting!</p>
+        <p class="mar-top-1 mar-btm-1 heading-4">Thank you for visiting!</p>
         <div class="social-nav">
           <a href="https://github.com/cuppajoey"><img src="/assets/img/github.svg" alt="Github Logo" width="20" height="20"></a>
           <a href="https://www.linkedin.com/in/cuppajoey"><img src="/assets/img/linkedin.svg" alt="LinkedIn Logo" width="20" height="20"></a>

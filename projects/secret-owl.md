@@ -2,6 +2,7 @@
 title: SecretOwl
 description: Securely share passwords by creating temporary links while composing an email.
 layout: layouts/project.njk
+publishedDate: 2020
 year: 2020
 tags: projects
 type: Outlook Extension

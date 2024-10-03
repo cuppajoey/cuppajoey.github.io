@@ -2,6 +2,7 @@
 title: Thomas Oilfield
 description: A modern website featuring bold color and typography reflective of the client’s commitment to quality.
 layout: layouts/project.njk
+publishedDate: 2019
 year: 2019
 tags: projects
 type: Wordpress Theme

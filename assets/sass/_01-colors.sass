@@ -1,45 +1,118 @@
 /* CSS color scheme */
 \:root
-  --text-1: #13131B
-  --text-2: #3B3D4E
-  --text-3: #686D80
-  --text-1-inverse: #FFFFFF
-  --text-2-inverse: #D5DBE6
-  --text-3-inverse: #9BA2B3
-  --bg-1: #FFFFFF
-  --bg-2: #F5F8FF
-  --bg-3: #D5DBE6
-  --bg-1-inverse: #07070D
-  --bg-2-inverse: #13131B
-  --bg-3-inverse: #262734
+  // Colors
+  --black: #08080B
+  --ink-100: #13131B
+  --ink-90: #252530
+  --ink-80: #3B3D4E
+  --ink-70: #585B71
+  --ink-60: #676C83
+  --ink-50: #81869B
+  --ink-40: #989FB6
+  --ink-30: #BBC2D4
+  --ink-20: #D5DBE6
+  --ink-10: #E8EBF2
+  --white: #FFFFFF
+  --purple-30: #BB86FB
+  --purple-40: #8736F9
+  --purple-60: #6103E7
+
+  // Themes
+  --background: var(--white)
+  --background-hover: var(--ink-10)
+  --border-strong: var(--ink-50)
+  --border-subtle: var(--ink-30)
+  --link-inverse: var(--purple-30)
+  --link-primary: var(--purple-60)
+  --link-primary-hover: var(--purple-40)
+  --link-secondary: var(--purple-40)
+  --icon-interactive: var(--purple-40)
+  --icon-inverse: var(--purple-30)
+  --icon-primary: var(--purple-60)
+  --icon-primary-hover: var(--purple-40)
+  --text-inverse: var(--white)
+  --text-primary: var(--ink-100)
+  --text-secondary: var(--ink-70)
+
+  // TODO: deprecated
   --accent: #b953d9
-  --light-accent: #5400cb
+  --border: #B7BECC
+  --border-inverse: #3B3D4E
   --dark-accent: #bb86fb
+  --light-accent: #5400cb
+  
+  .layer-01
+    --background: var(--ink-10)
+    --background-hover: var(--ink-20)
+    --text-primary: var(--ink-100)
+    --text-secondary: var(--ink-80)
+
+  body.dark-theme
+    --background: var(--ink-100)
+    --background-hover: var(--ink-90)
+    --border-interactive: var(--purple-40)
+    --border-strong: var(--ink-60)
+    --border-subtle: var(--ink-80)
+    --icon-interactive: var(--purple-30)
+    --icon-inverse: var(--purple-60)
+    --icon-primary: var(--purple-40)
+    --icon-primary-hover: var(--purple-30)
+    --icon-secondary: var(--purple-30)
+    --layer-one: var(--ink-80)
+    --layer-one-hover: var(--ink-70)
+    --link-inverse: var(--purple-60)
+    --link-primary: var(--purple-40)
+    --link-primary-hover: var(--purple-30)
+    --link-secondary: var(--purple-30)
+    --text-inverse: var(--ink-100)
+    --text-primary: var(--ink-10)
+    --text-secondary: var(--ink-30)
+
+    // TODO: deprecated
+    --border: #3B3D4E
+    --border-inverse: #B7BECC
+  
+    .layer-01
+      --background: var(--ink-90)
+      --background-hover: var(--ink-80)
+      --border-strong: var(--ink-50)
+      --border-subtle: var(--ink-70)
+      --text-primary: var(--white)
+      --text-secondary: var(--ink-20)
+  
+    .layer-02
+      --background: var(--ink-80)
+      --background-hover: var(--ink-70)
+      --border-strong: var(--ink-40)
+      --border-subtle: var(--ink-60)
+
 
 // Text Colors
-$text-1: var(--text-1)
-$text-2: var(--text-2)
-$text-3: var(--text-3)
-$text-1-inverse: var(--text-1-inverse)
-$text-2-inverse: var(--text-2-inverse)
-$text-3-inverse: var(--text-3-inverse)
+$text-primary: var(--text-primary)
+$text-secondary: var(--text-secondary)
+$icon-primary: var(--icon-primary)
+$icon-primary-hover: var(--icon-primary-hover)
+$icon-interactive: var(--icon-interactive)
+$icon-secondary: var(--icon-secondary)
+$link-primary: var(--link-primary)
+$link-primary-hover: var(--link-primary-hover)
+$link-secondary: var(--link-secondary)
+$link-inverse: var(--link-inverse)
 
+// TODO: deprecated
 $accent: var(--accent)
 $accent-dark: var(--dark-accent)
 $accent-light: var(--light-accent)
 
 // Background Colors
-$bg-1: var(--bg-1)
-$bg-2: var(--bg-2)
-$bg-3: var(--bg-3)
-$bg-1-inverse: var(--bg-1-inverse)
-$bg-2-inverse: var(--bg-2-inverse)
-$bg-3-inverse: var(--bg-3-inverse)
+$background: var(--background)
 
 // Borders
 // ref: 0.0625rem = 1px
-$border: 0.0625rem solid #B7BECC
-$border-inverse: 0.0625rem solid #3B3D4E
+$border: 0.0625rem solid var(--border)
+$border-strong: 0.0625rem solid var(--border-strong)
+$border-subtle: 0.0625rem solid var(--border-subtle)
+$border-inverse: 0.0625rem solid var(--border-inverse)
 
 .border
   border: $border
@@ -47,8 +120,8 @@ $border-inverse: 0.0625rem solid #3B3D4E
   border: $border-inverse
 
 // Outlines
-$outline: 0.0625rem solid #B7BECC
-$outline-inverse: 0.0625rem solid #3B3D4E
+$outline: 0.0625rem solid var(--border-subtle)
+$outline-inverse: 0.0625rem solid var(--border-inverse)
 
 .outline
   outline: $outline
@@ -65,3 +138,6 @@ $outline-inverse: 0.0625rem solid #3B3D4E
     color: var(--text-#{$i})
   .text-#{$i}-inverse
     color: var(--text-#{$i}-inverse)
+
+.layer-01
+  background: var(--background)

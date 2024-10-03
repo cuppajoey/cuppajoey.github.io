@@ -1,11 +1,11 @@
 .btn
   background-color: transparent
-  border: $outline-inverse
+  border: $outline
   border-radius: 20rem
-  box-shadow: 0px 1px 2px $bg-1-inverse inset
-  color: $text-2-inverse
+  color: $text-secondary
   cursor: pointer
   display: inline-block
+  font-family: $monospace
   font-size: 0.875rem
   letter-spacing: 0.1rem
   padding: 0.5rem 2rem
@@ -44,16 +44,16 @@
     transition: opacity 150ms ease-in-out 50ms
 
     svg
-      fill: $text-2-inverse
+      fill: $icon-secondary
       min-height: 0
       transition: all 150ms ease-in-out
       transform: scale(0)
       transform-origin: center
 
 .card
-  border: $border-inverse
+  border: $border-subtle
   border-radius: 1rem
-  color: $text-2-inverse
+  color: $text-secondary
   display: flex
   flex-direction: column
   margin-bottom: 1.5rem
@@ -61,38 +61,39 @@
   transition: all 150ms ease-in-out
 
   .card--header
-    align-items: center
-    border-bottom: $border-inverse
+    border-bottom: $border-subtle
     border-color: inherit
     display: flex
-    justify-content: space-between
-    padding: 1.2rem 1.5rem
+    flex-direction: column
+    padding: 1.25rem 1.25rem
+
+    &:has(.btn)
+      align-items: center
+      flex-direction: row
+      justify-content: space-between
 
     .card--title
-      font-size: 1.5rem
-      line-height: 1.5
+      color: $text-primary
       margin-bottom: 0
       margin-top: 0
 
   .card--body
-    padding: 1.25rem 1.5rem
+    align-items: flex-end
+    display: flex
+    flex-direction: column
+    height: 100% // equalize shorter cards
+    justify-content: space-between
+    padding: 1.25rem 1.25rem
 
     & > *:last-child
       margin-bottom: 0
 
-  .card--footer
-    border-top: $border-inverse
-    border-color: inherit
-    margin-top: auto
-    padding: 0.75rem 1.5rem
+    svg
+      fill: $icon-interactive
 
-    span
-      display: inline-block
-
-  &:not(div):hover
-    background-color: var(--bg-1-inverse)
-    color: $text-1-inverse
-    box-shadow: 0 2px 4px -2px inset var(--bg-2-inverse)
+  &:not(div):hover // interactive cards
+    background-color: var(--background-hover)
+    color: $text-primary
 
     .btn
       border-color: $accent-dark
@@ -111,6 +112,7 @@
         margin-right: 1.75rem
 
 .card-grid
+  gap: 1rem
 
   .card
     grid-column: auto / span 4

@@ -2,13 +2,13 @@
 layout: layouts/base.njk
 templateClass: project
 ---
-<article class="pad-top-5 pad-btm-5 text-1-inverse wrapper" style="max-width: 800px;">
+<article class="pad-top-5 pad-btm-5 wrapper" style="max-width: 800px;">
   <header>
     <div class="meta">
-      <span class="label-sm text-3">{{ year }}</span>
-      <span class="label-sm text-3">{{ type }}</span>
+      <span class="label-sm">{{ year }}</span>
+      <span class="label-sm">{{ type }}</span>
     </div>
-    <h1 class="heading-2 mar-btm-2 mar-top-05 text-1-inverse">{{ title }}</h1>
+    <h1 class="mar-top-05">{{ title }}</h1>
   </header>
 
   {{ content | safe }}

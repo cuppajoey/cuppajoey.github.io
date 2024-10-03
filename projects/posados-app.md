@@ -2,6 +2,7 @@
 title: Posados Café
 description: React Native app with an integrated Wordpress website using WP Rest API.
 layout: layouts/project.njk
+publishedDate: 2020
 year: 2020
 tags: projects
 type: React Native App
