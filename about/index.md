@@ -1,8 +1,8 @@
 ---
 layout: layouts/about.njk
-title: About Me
+title: Resume
 templateClass: tmpl-about
 eleventyNavigation:
-  key: About Me
+  key: Resume
   order: 3
 ---

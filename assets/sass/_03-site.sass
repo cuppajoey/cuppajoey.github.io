@@ -4,19 +4,21 @@
   padding: 0
 
 *::selection
-  background-color: $bg-1-inverse
-  color: $text-1-inverse
+  background-color: var(--accent)
+  color: $text-primary
 
 html
   font-size: 16px
   line-height: 24px
 
 body
+  background-color: $background
+  color: $text-primary
   margin: 0
   padding: 0
 
 .img-placeholder
-  background-color: $bg-3
+  background-color: var(--layer-one)
   height: 530px
   max-height: 100%
   max-width: 100%
@@ -27,7 +29,7 @@ img
 
 hr
   border: none
-  border-top: $border-inverse
+  border-top: $border-strong
   margin-bottom: 1rem
   margin-top: 1rem
 
@@ -39,16 +41,52 @@ hr
   padding-right: 3rem
 
 a
-  color: var(--light-accent)
+  color: $link-primary
   text-decoration-thickness: 1.5px
   text-underline-offset: 0.2em
   transition: color 100ms ease-in-out
   &:hover
     text-decoration: none
 
+  &.direct-link
+    font-size: 0.6em
+    text-decoration: none
+    vertical-align: text-bottom
+
+
 p > a
   &:not(.btn):visited
     color: $accent
+
+table
+  border-spacing: 0
+  display: block
+  max-width: 100%
+  overflow: auto
+  width: max-content
+
+  tr
+    border-top: $border-subtle
+
+    th, td
+      border: $border-subtle
+      padding: 6px 13px
+
+      img
+        border-radius: 0.5em
+
+    th
+      &:first-child
+        border-top-left-radius: 0.75em
+      &:last-child
+        border-top-right-radius: 0.75em
+
+    &:last-child
+      td
+        &:first-child
+          border-bottom-left-radius: 0.75em
+        &:last-child
+          border-bottom-right-radius: 0.75em
 
 @mixin side-borders
   &::after, &::before
@@ -58,17 +96,17 @@ p > a
     top: 0
 
   &::after
-    border-right: $border-inverse
+    border-right: $border-subtle
     right: 1.5rem
   
   &::before
-    border-left: $border-inverse
+    border-left: $border-subtle
     left: 1.5rem
 
 // Header
 .header
   @include side-borders
-  border-bottom: $border-inverse
+  border-bottom: $border-subtle
   padding: 1.75rem 0
   position: relative
 
@@ -89,19 +127,24 @@ p > a
 
     .nav-item
       display: inline-block
+      font-family: $serif
       list-style: none
+      margin-bottom: 0
 
     a
-      color: var(--text-2-inverse)
+      color: $text-primary
       display: inline-block
+      font-size: 1.2rem
+      letter-spacing: 0.025px
       margin-left: 2rem
       text-decoration: none
+      
+      &:visited
+        color: $text-primary // disable `visited` styling
 
       &:hover
-        color: var(--dark-accent) !important
+        color: $link-primary-hover
 
-      &:visited
-        color: var(--text-2-inverse)
 
 main
   @include side-borders
@@ -111,6 +154,7 @@ main
   border: 1px solid var(--dark-accent)
   border-radius: 1rem
   color: var(--dark-accent)
+  font-family: $monospace
   font-size: 0.75em
   opacity: 0.9
   padding: 0.25rem 0.75rem
@@ -120,16 +164,15 @@ main
     opacity: 1
 
   &:visited
-    color: var(--text-1)
+    color: var(--text-primary)
 
 .pagination
-  border-top: $border-inverse
-  margin-top: 3rem
-  padding-top: 3rem
-
   display: grid
+  border-top: $border-subtle
   grid-template-areas: 'next prev'
   grid-template-columns: 1fr 1fr
+  margin-top: 3rem
+  padding-top: 3rem
   
   .next
     grid-area: next
@@ -148,11 +191,13 @@ main
 
   a
     margin: 0.5rem
+
   img
     width: auto
 
 .footer
   @include side-borders
+  background-color: var(--black)
   position: relative
   
   .wrapper
@@ -160,7 +205,7 @@ main
     z-index: 2
 
     &::after
-      border-bottom: $border-inverse
+      border-bottom: $border-subtle
       bottom: -2.5rem
       content: ''
       display: block
@@ -192,7 +237,28 @@ figure.img
     border-radius: 1.5rem
 
   &::before
-    border: $border-inverse
+    border: $border-subtle
+    border-radius: 1.5rem
+    content: ''
+    display: block
+    height: 100%
+    left: 1.25rem
+    position: absolute
+    top: 1.25rem
+    width: 100%
+    z-index: -1
+
+.headshot
+  background-image: url(/assets/img/Joseph-Schultz-Headshot-square.png)
+  background-size: cover
+  border-radius: 1.5rem
+  height: 400px
+  max-width: 500px
+  position: relative
+  width: calc(100% - 1.25rem)
+
+  &::before
+    border: $border-subtle
     border-radius: 1.5rem
     content: ''
     display: block
@@ -209,7 +275,7 @@ figure.img
 
 .project
   header
-    border-bottom: $border-inverse
+    border-bottom: $border-subtle
     margin-bottom: 2rem
     padding-bottom: 1.5rem
 
@@ -220,7 +286,7 @@ figure.img
       display: flex
       
       .label-sm:not(:first-child)
-        border-left: $border-inverse
+        border-left: $border-subtle
         margin-left: 1em
         padding-left: 1em
 
@@ -233,12 +299,12 @@ figure.img
       border-radius: 1.5rem
 
     &::before
-      border: $border-inverse
+      border: $border-subtle
       border-radius: 1.5rem
       content: ''
       display: block
       height: 100%
-      left: 0.75rem
+      left: 1rem
       position: absolute
       top: 0.75rem
       width: 100%
