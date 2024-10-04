@@ -516,6 +516,9 @@
   }
 }
 @media only screen and (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
   .xxxs-col, .xxxs-col-1 {
     grid-column: auto/span 1;
   }
@@ -1672,6 +1675,7 @@ figure.img::before {
 
 .headshot {
   background-image: url(/assets/img/Joseph-Schultz-Headshot-square.png);
+  background-position: center;
   background-size: cover;
   border-radius: 1.5rem;
   height: 400px;
@@ -2630,6 +2634,17 @@ input[type=reset] {
   }
   .heading-4 {
     font-size: 1.25rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header .wrapper {
+    flex-direction: column;
+  }
+  header .wrapper nav {
+    margin-top: 1.5rem;
+  }
+  header .wrapper nav li:first-child a {
+    margin-left: 0;
   }
 }
 
