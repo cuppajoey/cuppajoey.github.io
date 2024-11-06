@@ -1,38 +1,38 @@
-@media only screen and (max-width: 960px)
-  html
-    font-size: 85%
-  .main-nav 
-    margin-top: 1rem
-    a
-      display: block
-      margin-bottom: 0.5rem
-      font-size: 1rem
+@media only screen and (max-width: 760px)
+  .header, main, .footer
+    &::after
+      right: 1rem
 
-  .display-1
-    font-size: 4rem
+    &::before
+      left: 1rem
 
-  .display-2
-    font-size: 3rem
+  header .social
+    display: none
 
-  .heading-1
-    font-size: 2.5rem
+  .project
+    article > .row
+      & > .col-3:first-child
+        display: none
+    
+    .article-body
+      grid-column: auto/span 12
 
-  .heading-2
-    font-size: 2rem
-
-  .heading-3
-    font-size: 1.5rem
-
-  .heading-4
-    font-size: 1.25rem
-
-@media only screen and (max-width: 500px)
+@media only screen and (max-width: 625px)
   header .wrapper
     flex-direction: column
 
-    nav
-      margin-top: 1.5rem
+    .brand
+      margin-right: 0
 
+      .logo
+        max-height: 2rem
+
+    nav
+      margin-top: 1rem
+
+      a
+        font-size: 1rem
+      
       li:first-child
         a
           margin-left: 0

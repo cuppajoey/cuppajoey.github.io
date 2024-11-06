@@ -5,43 +5,29 @@ templateClass: home
 
 {% from "components/Button.njk" import Button %}
 {% from "components/Card.njk" import Card %}
-{% from "components/CardGrid.njk" import CardGrid %}
+{% from "components/Tile.njk" import Tile %}
 
 <div class="content">
   <main class="main">
     <section id="about" class="pad-top-5 pad-btm-5">
-      <div class="wrapper row">
-        <div class="col-6 xxl-col-6 sm-col-12">
-          <div class="headshot mar-btm-4"></div>
-          <h2 class="mar-btm-1 mar-left-1">Hi, I’m Joseph,</h2>
-          <p class="mar-btm-2 mar-left-1 body-compact">a front-end engineer and designer dedicated to continuous learning, creative exploration and self-refinement.</p>
+      <div class="wrapper">
+        <div class="intro">
+          <div class="headshot"></div>
+          <h1>Hi 👋🏼, I&rsquo;m Joey, <div class="heading-2 mar-top-05">a front-end engineer and designer who loves learning, creative exploration and self-reflection.</div></h2>
         </div>
-        <div class="col-6 xxl-col-6 sm-col-12 flex direction-col align-start">
-          {{ Card({
-            button: {label: 'Launch', show: true},
-            description: 'A selection of case studies showcasing my professional work and passion projects in software design and development.',
-            hideIcon: true,
-            href: '/projects',
-            title: 'Projects'
-          })}}
-          {{ Card({
-            button: {label: 'Resume/CV', show: true},
-            description: 'Learn more about my professional experience, view my resume, or contact me for projects.',
-            hideIcon: true,
-            href: '/about',
-            title: 'About me'
-          })}}
-          {{ Card({
-            description: 'A collection of doodles and digital artwork that showcase one of my favorite hobbies and pastimes. Coming soon.',
-            hideIcon: true,
-            title: 'Illustrations'
-          })}}
+        <div class="tile-group">
+          {% call Tile({accentTitle: true, href: '/projects', title: 'Discover my work'}) %}
+            <p>A selection of case studies showcasing my professional work and passion projects in software design and development.</p>
+          {% endcall %}
+          {% call Tile({accentTitle: true, href: '/about', title: 'Explore my background'}) %}
+            <p>Learn more about my professional experience, view my resume, or contact me for projects.</p>
+          {% endcall %}
         </div>
       </div>
     </section>
     <section id="projects" class="layer-01 pad-btm-5 pad-top-3">
       <div class="wrapper">
-        <h2 class="mar-btm-3">Projects &amp; Passions</h2> 
+        <h2 class="mar-btm-3">Projects &amp; Case Studies</h2> 
         {% include "projectGrid.njk" %}
       </div>
     </section>

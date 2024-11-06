@@ -1,11 +1,13 @@
 ---
-title: MeisterTask
+categories: ['PHP', 'Client Library']
 description: An unofficial PHP client library for working with the MeisterTask API.
+entity: MeisterTask
 layout: layouts/project.njk
 publishedDate: 2019
-year: 2019
+startDate: 2019
 tags: projects
-type: PHP Client Library
+title: Reducing the burden of task management with automation
+type: project
 ---
 ![image](/assets/img/projects/MeisterTask-Library.png)
 

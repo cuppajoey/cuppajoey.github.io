@@ -4,7 +4,7 @@
   padding: 0
 
 *::selection
-  background-color: var(--accent)
+  background-color: var(--purple-30)
   color: $text-primary
 
 html
@@ -13,7 +13,6 @@ html
 
 body
   background-color: $background
-  color: $text-primary
   margin: 0
   padding: 0
 
@@ -29,9 +28,29 @@ img
 
 hr
   border: none
-  border-top: $border-strong
-  margin-bottom: 1rem
-  margin-top: 1rem
+  border-radius: 50px
+  display: block
+  height: 0.25rem
+  margin: 4rem auto
+  outline: 1px solid var(--ink-70)
+  outline-offset: 0.25rem
+  overflow: visible
+  position: relative
+  width: 0.25rem
+
+  &::after
+    right: -2.75rem
+
+  &::before
+    left: -2.75rem
+
+  &::after, &::before
+    background-color: var(--ink-70)
+    content: ''
+    height: 1px
+    position: absolute
+    top: calc(50% - 0.5px)
+    width: 2.5rem
 
 .wrapper
   margin-left: auto
@@ -42,17 +61,17 @@ hr
 
 a
   color: $link-primary
-  text-decoration-thickness: 1.5px
+  text-decoration: none
   text-underline-offset: 0.2em
   transition: color 100ms ease-in-out
-  &:hover
-    text-decoration: none
+
+  &:not([class]):hover // only apply hover styles to standard links
+    text-decoration: underline
 
   &.direct-link
-    font-size: 0.6em
+    font-size: 1.25rem
     text-decoration: none
     vertical-align: text-bottom
-
 
 p > a
   &:not(.btn):visited
@@ -68,25 +87,13 @@ table
   tr
     border-top: $border-subtle
 
+    th
+      font-family: $monospace
+      font-weight: normal
+
     th, td
       border: $border-subtle
       padding: 6px 13px
-
-      img
-        border-radius: 0.5em
-
-    th
-      &:first-child
-        border-top-left-radius: 0.75em
-      &:last-child
-        border-top-right-radius: 0.75em
-
-    &:last-child
-      td
-        &:first-child
-          border-bottom-left-radius: 0.75em
-        &:last-child
-          border-bottom-right-radius: 0.75em
 
 @mixin side-borders
   &::after, &::before
@@ -116,9 +123,12 @@ table
     justify-content: space-between
     position: relative
 
-  .site-branding
-    max-height: 2.5rem
-    width: auto
+  .brand
+    margin-right: 2rem
+
+    .logo
+      max-height: 2.5rem
+      width: auto
 
   nav
     & > ul
@@ -128,6 +138,7 @@ table
     .nav-item
       display: inline-block
       font-family: $serif
+      font-weight: 300
       list-style: none
       margin-bottom: 0
 
@@ -135,16 +146,18 @@ table
       color: $text-primary
       display: inline-block
       font-size: 1.2rem
-      letter-spacing: 0.025px
+      letter-spacing: 0.5px
       margin-left: 2rem
       text-decoration: none
-      
+
       &:visited
         color: $text-primary // disable `visited` styling
 
       &:hover
         color: $link-primary-hover
 
+  .social
+    margin-left: auto
 
 main
   @include side-borders
@@ -185,15 +198,19 @@ main
     display: block
 
 // Footer
-.social-nav
+.social
   display: flex
   justify-content: center
 
   a
+    display: inline-flex
     margin: 0.5rem
 
-  img
-    width: auto
+    &:hover svg
+      fill: $icon-secondary
+
+  svg
+    fill: $text-secondary
 
 .footer
   @include side-borders
@@ -233,12 +250,8 @@ main
 figure.img
   position: relative
 
-  img
-    border-radius: 1.5rem
-
   &::before
     border: $border-subtle
-    border-radius: 1.5rem
     content: ''
     display: block
     height: 100%
@@ -247,62 +260,84 @@ figure.img
     top: 1.25rem
     width: 100%
     z-index: -1
+
+.intro
+  align-items: center
+  display: flex
+  flex-direction: column
+  margin-left: auto
+  margin-right: auto
+  max-width: 900px
+  text-align: center
+
+  h1
+    color: $text-primary
 
 .headshot
   background-image: url(/assets/img/Joseph-Schultz-Headshot-square.png)
   background-position: center
   background-size: cover
-  border-radius: 1.5rem
-  height: 400px
-  max-width: 500px
+  border-radius: 50px
+  height: 5rem
   position: relative
-  width: calc(100% - 1.25rem)
-
-  &::before
-    border: $border-subtle
-    border-radius: 1.5rem
-    content: ''
-    display: block
-    height: 100%
-    left: 1.25rem
-    position: absolute
-    top: 1.25rem
-    width: 100%
-    z-index: -1
+  width: 5rem
 
 .project-list
   padding-bottom: 4rem
   padding-top: 3rem
 
 .project
+  h1,h2,h3,h4,h5,h6
+    &:has(.direct-link)
+      position: relative
+
+      &:hover .direct-link
+        opacity: 1
+        pointer-events: auto
+
+    .direct-link
+      opacity: 0
+      pointer-events: none
+      padding-right: 1rem // increase hover surface area
+      position: absolute
+      left: -2rem
+
+  .sidebar
+    font-family: $monospace
+    position: sticky
+    margin-right: 2rem
+    top: 2rem
+
+    .label-sm
+      border-top: $border
+      text-transform: uppercase
+
+    ul
+      font-size: 0.875rem
+      list-style: none
+      padding-left: 0
+
+      li
+        margin-bottom: 0.5rem
+
   header
-    border-bottom: $border-subtle
-    margin-bottom: 2rem
+    border-top: $border-subtle
+    margin-bottom: 1rem
     padding-bottom: 1.5rem
 
     h1
       margin-bottom: 0
 
-    .meta
-      display: flex
-      
-      .label-sm:not(:first-child)
-        border-left: $border-subtle
-        margin-left: 1em
-        padding-left: 1em
+    .label-list
+      gap: 2.5rem
 
   p:has(img)
     position: relative
     margin-bottom: 2.5rem
     z-index: 1
 
-    img
-      border-radius: 1.5rem
-
     &::before
       border: $border-subtle
-      border-radius: 1.5rem
-      content: ''
       display: block
       height: 100%
       left: 1rem

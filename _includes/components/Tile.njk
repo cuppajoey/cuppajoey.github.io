@@ -1,0 +1,21 @@
+{% macro Tile(props) %}
+  {% if props.href %} <a class="tile tile__interactive" href="{{ props.href }}"> {% else %} <div class="tile"> {% endif %}
+    {% set titleClass %}
+      {{'tile--title body-display' if props.accentTitle else 'tile--title'}}
+    {% endset %}
+    <div class="tile--header">
+      <span class="{{titleClass}}">{{ props.title }}</span>
+      {% if props.icon %}
+        <span class="tile--icon">{% icon props.icon %}</span>
+      {% endif %}
+    </div>
+    <div class="tile--body">
+      {{ caller() }}
+    </div>
+    {% if props.href %}
+      <div class="tile--footer">
+        <span class="tile--icon">{% icon 'ArrowRight20' %}</span>
+      </div>
+    {% endif %}
+  {% if props.href %} </a> {% else %} </div> {% endif %}
+{% endmacro %}

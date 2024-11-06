@@ -2,11 +2,22 @@
 
 <div class="card-grid project-grid row">
   {% for project in collections.projects | sort(true, false, 'data.publishedDate') %}
+    {% if project.data.type == 'case-study' %}
+      {% set label = 'Case Study' %}
+    {% else %}
+      {% set label = 'Project' %}
+    {% endif %}
+
     {{ Card({
+      categories: project.data.categories,
       description: project.data.description,
+      endDate: project.data.endDate,
+      entity: project.data.entity,
       href: project.url,
-      label: project.data.type,
-      title: project.data.title
+      label: label,
+      startDate: project.data.startDate,
+      title: project.data.title,
+      type: project.data.type
     })}}
   {% endfor %}
 </div>

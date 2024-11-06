@@ -1,11 +1,13 @@
 ---
-title: SecretOwl
+categories: ['Javascript', 'PHP', 'Outlook API']
 description: Securely share passwords by creating temporary links while composing an email.
+entity: SecretOwl
 layout: layouts/project.njk
 publishedDate: 2020
-year: 2020
+startDate: 2020
 tags: projects
-type: Outlook Extension
+title: Send secrets without leaving your inbox
+type: project
 ---
 ![image](/assets/img/projects/SecretOwl-logo.png)
 

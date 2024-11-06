@@ -40,6 +40,7 @@
     color: $accent-dark
 
   .btn--icon
+    display: flex
     opacity: 0
     transition: opacity 150ms ease-in-out 50ms
 
@@ -50,15 +51,46 @@
       transform: scale(0)
       transform-origin: center
 
+.label-list
+  align-items: center
+  display: flex
+  gap: 1.25rem
+  line-height: 1
+
+  .icon-label
+    align-items: center
+    display: inline-flex
+    gap: 0.75rem
+
+.tag
+  background-color: var(--ink-70)
+  border-radius: 50rem
+  color: $text-secondary
+  display: inline-block
+  font-family: $monospace
+  font-size: 0.75rem
+  line-height: 1
+  padding: 0.25rem 0.5rem
+
 .card
   border: $border-subtle
-  border-radius: 1rem
   color: $text-secondary
   display: flex
   flex-direction: column
   margin-bottom: 1.5rem
   text-decoration: none
   transition: all 150ms ease-in-out
+
+  .card--eyebrow
+    margin-bottom: 1.25rem
+
+    .icon-label
+      max-width: 50%
+
+      .label
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
 
   .card--header
     border-bottom: $border-subtle
@@ -78,12 +110,11 @@
       margin-top: 0
 
   .card--body
-    align-items: flex-end
     display: flex
     flex-direction: column
     height: 100% // equalize shorter cards
     justify-content: space-between
-    padding: 1.25rem 1.25rem
+    padding: 0 1.25rem
 
     & > *:last-child
       margin-bottom: 0
@@ -91,7 +122,13 @@
     svg
       fill: $icon-interactive
 
-  &:not(div):hover // interactive cards
+  .card--footer
+    padding: 2.5rem 1.25rem 1.25rem
+
+    .tag-list
+      margin-top: 1rem
+
+  &.card__interactive:hover // interactive cards
     background-color: var(--background-hover)
     color: $text-primary
 
@@ -112,11 +149,108 @@
         margin-right: 1.75rem
 
 .card-grid
-  gap: 1rem
+  gap: 1px
 
   .card
+    border: none
+    outline: $outline
     grid-column: auto / span 4
     margin-bottom: 0
 
+    .card--header
+      border-bottom: none
+
     @media only screen and (max-width: 960px)
       grid-column: auto / span 6
+
+.tile
+  display: flex
+  flex-direction: column
+  outline: $outline
+  padding: 1rem
+
+  .tile--header
+    display: flex
+    font-size: 1.25rem
+    justify-content: space-between
+    margin-bottom: 1.25rem
+
+  .tile--icon
+    fill: $icon-secondary
+
+  .tile--body
+    color: $text-secondary
+    display: flex
+    flex-direction: column
+    font-family: $monospace
+    height: 100% // equalize shorter cards
+
+    *:last-child
+      margin-bottom: 0
+
+  .tile--footer
+    display: flex
+    margin-top: 1rem
+
+    .tile--icon
+      margin-left: auto
+  
+  &.tile__interactive
+    color: $text-primary
+
+    &:hover
+      background-color: var(--background-hover)
+      color: $text-primary
+
+    .tile--footer .tile--icon svg
+      fill: var(--purple-30)
+
+.tile-group
+  display: flex
+  flex-wrap: wrap
+  gap: 1px
+  margin-bottom: 2rem
+  
+  .tile
+    flex: 1 1 30%
+
+.accordion
+  border-bottom: $border
+
+  .accordion--header
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 0.75rem 1rem
+
+    &:hover
+      background-color: $background-hover
+      cursor: pointer
+
+  .accordion--trigger-icon
+    align-items: center
+    display: inline-flex
+    justify-content: center
+    transform: rotate(0deg)
+    transition: all 150ms ease-in-out
+
+    svg
+      fill: var(--purple-30)
+
+  .accordion--content
+    display: none
+    padding: 0.5rem 1rem 1rem
+
+    *:last-child
+      margin-bottom: 0
+
+  &[data-open]
+    .accordion--trigger-icon
+      transform: rotate(90deg)
+
+    .accordion--content
+      display: block
+
+.accordion-group
+  border-top: $border
+  margin-bottom: 2rem

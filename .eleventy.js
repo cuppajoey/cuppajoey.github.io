@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
+const CarbonIcons = require('@carbon/icons');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -7,17 +8,68 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const sass = require("sass");
 
+/** Create an HTML element from an object */
+function createElement(obj) {
+  const { elem, attrs, content } = obj;
+  let htmlString = `<${elem}`; // Opening tag
+
+  if (attrs) { // Add optional attributes
+    for (const [key, value] of Object.entries(attrs)) {
+      htmlString += ` ${key}="${value}"`;
+    }
+  }
+
+  htmlString += ">";
+
+  if (content) { // Add optional child elements
+    content.forEach(child => {
+      htmlString += createElement(child); // Recursive call for child elements
+    });
+  }
+
+  htmlString += `</${elem}>`; // Closing tag
+
+  return htmlString;
+}
+
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
   // eleventyConfig.addPassthroughCopy("assets/css");
   eleventyConfig.addPassthroughCopy("assets/img");
   eleventyConfig.addPassthroughCopy("assets/js");
   eleventyConfig.addPassthroughCopy("assets/fonts");
+  eleventyConfig.addPassthroughCopy({ "assets/img/favicon": "/" }); // Copy `img/favicon` to root
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+
+  eleventyConfig.addShortcode('icon', function (iconName, size) {
+    const icon = CarbonIcons[iconName];
+    return icon ? createElement(icon) : '';
+  });
+
+  eleventyConfig.addShortcode('tableOfContents', function (post) {
+    if (post.indexOf('</h2>') === -1) return ''; // Check if post contains any `h2`s
+    
+    let tocHtml = `
+      <div class="label-sm mar-btm-1 pad-top-1">Table of contents</div>
+      <ul>
+    `;
+
+    const regex = /<h2[^>]*>(.*?)<\/h2>/g;
+    while ((match = regex.exec(post)) !== null) {
+      const withoutAnchor = match[1].replace(/<a[^>]*>.*?<\/a>/g, ""); // remove any <a> tags and their inner content
+      const cleanText = withoutAnchor.replace(/<\/?[^>]+(>|$)/g, ""); // remove any remaining HTML tags
+      
+      tocHtml += `<li><a href="#${cleanText.trim().toLowerCase()}">${cleanText.trim()}</a></li>`;
+    }
+
+    tocHtml += '</ul>';
+
+    return tocHtml;
+  });
 
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -48,6 +100,11 @@ module.exports = function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
+  eleventyConfig.addFilter("getMorePosts", (collection, count, page) => {
+    const postsExcludingCurrent = collection.filter((post) => post.template?.filePathStem !== page?.filePathStem);
+    return postsExcludingCurrent.slice(0, count ?? 3);
+  });
+
   function filterTagList(tags) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts", "projects"].indexOf(tag) === -1);
   }
@@ -73,7 +130,7 @@ module.exports = function(eleventyConfig) {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: "after",
       class: "direct-link",
-      symbol: "#",
+      symbol: "🔗",
       level: [1,2,3,4],
     }),
     slugify: eleventyConfig.getFilter("slug")

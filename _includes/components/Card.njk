@@ -1,26 +1,39 @@
-{% from "./Icon.njk" import Icon %}
-
 {% macro Card(props) %}
-  {% if props.href %} <a class="card" href="{{ props.href }}"> {% else %} <div class="card"> {% endif %}
+  {% if props.href %} <a class="card card__interactive" href="{{ props.href }}"> {% else %} <div class="card"> {% endif %}
     <div class="card--header">
-      {% if props.label %}
-        <span class="label-sm">{{ props.label }}</span>
+      {% if props.label or props.entity %}
+        <div class="card--eyebrow label-list">
+          {% if props.label %}
+            <span class="icon-label">
+              {% if props.type === 'case-study' %} <span class="icon">{% icon 'WhitePaper20' %}</span> {% endif %}
+              {% if props.type === 'project' %} <span class="icon">{% icon 'RepoSourceCode20' %}</span> {% endif %}
+              <span class="label label-sm">{{ props.label }}</span>
+            </span>
+          {% endif %}
+        </div>
       {% endif %}
       <h3 class="card--title">{{ props.title }}</h3>
       {% if props.button.show == true %}
         <span class="btn btn-faux">
           <span class="btn--label">{{ props.button.label }}</span>
-          <span class="btn--icon">{{ Icon() }}</span>
+          <span class="btn--icon">{% icon 'ArrowRight16' %}</span>
         </span>
       {% endif %}
     </div>
     <div class="card--body">
       <p class="body-compact">{{ props.description }}</p>
-      {% if props.hideIcon !== true %}
-        <div class="card--actions">
-          <span class="card--icon">{{ Icon({size: 24}) }}</span>
-        </div>
+    </div>
+    <div class="card--footer">
+      {% if props.entity %}
+        <div class="label label-sm">{{ props.entity }}</div>
       {% endif %}
+      <div class="label label-sm">{{ props.startDate }}{% if props.endDate %}&ndash;{{ props.endDate }}{% endif %}</div>
+      <div class="card--tags tag-list">
+        {% set tags = props.categories.slice(0, 3) %}
+        {% for tag in tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
     </div>
   {% if props.href %} </a> {% else %} </div> {% endif %}
 {% endmacro %}

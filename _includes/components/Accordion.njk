@@ -1,0 +1,9 @@
+{% macro Accordion(title, open = false) %}
+  <div class="accordion" {% if open %} data-open {% endif %}>
+    <div class="accordion--header">
+      <span class="accordion--title">{{ title }}</span>
+      <span class="accordion--trigger-icon">{% icon 'ArrowRight16' %}</span>
+    </div>
+    <div class="accordion--content">{{ caller() }}</div>
+  </div>
+{% endmacro %}

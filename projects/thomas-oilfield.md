@@ -1,11 +1,13 @@
 ---
-title: Thomas Oilfield
+categories: ['HTML', 'CSS', 'Javascript', 'Wordpress']
 description: A modern website featuring bold color and typography reflective of the client’s commitment to quality.
+entity: Thomas Oilfield Services
 layout: layouts/project.njk
 publishedDate: 2019
-year: 2019
+startDate: 2019
 tags: projects
-type: Wordpress Theme
+title: Delivering bespoke design that reflects a client’s values
+type: project
 ---
 
 ![image](/assets/img/projects/Thomas-Oilfield.png)
