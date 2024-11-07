@@ -3,17 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benefits Management</title>
+    <title>Creating an employee benefits app for a private insurance firm</title>
     <meta name="description" content="SAAS app built on PHP &amp; JS for businesses to manage their employee benefits.">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body class="body dark-theme">
     <header class="header">
       <div class="wrapper">
-        <div>
+        <div class="brand">
           <a href="/">
-            <img class="site-branding" src="/assets/img/cuppajoey-logo.svg" alt="Joseph Schultz" data-aos="fade-in">
+            <img class="logo" src="/assets/img/cuppajoey-logo.svg" alt="Joseph Schultz" data-aos="fade-in">
           </a>
         </div>
         <nav class="main-nav">
@@ -29,45 +34,219 @@
               </li>
           </ul>
         </nav>
+        <div class="social">
+          <a href="https://github.com/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z"></path></svg></a>
+          <a href="https://www.linkedin.com/in/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M26.2,4H5.8C4.8,4,4,4.8,4,5.7v20.5c0,0.9,0.8,1.7,1.8,1.7h20.4c1,0,1.8-0.8,1.8-1.7V5.7C28,4.8,27.2,4,26.2,4z M11.1,24.4	H7.6V13h3.5V24.4z M9.4,11.4c-1.1,0-2.1-0.9-2.1-2.1c0-1.2,0.9-2.1,2.1-2.1c1.1,0,2.1,0.9,2.1,2.1S10.5,11.4,9.4,11.4z M24.5,24.3	H21v-5.6c0-1.3,0-3.1-1.9-3.1c-1.9,0-2.1,1.5-2.1,2.9v5.7h-3.5V13h3.3v1.5h0.1c0.5-0.9,1.7-1.9,3.4-1.9c3.6,0,4.3,2.4,4.3,5.5V24.3z"></path></svg></a>
+          <a href="https://instagram.com/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><circle cx="22.406" cy="9.594" r="1.44"></circle><path d="M16,9.8378A6.1622,6.1622,0,1,0,22.1622,16,6.1622,6.1622,0,0,0,16,9.8378ZM16,20a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"></path><path d="M16,6.1622c3.2041,0,3.5837.0122,4.849.07a6.6418,6.6418,0,0,1,2.2283.4132,3.9748,3.9748,0,0,1,2.2774,2.2774,6.6418,6.6418,0,0,1,.4132,2.2283c.0577,1.2653.07,1.6449.07,4.849s-.0122,3.5837-.07,4.849a6.6418,6.6418,0,0,1-.4132,2.2283,3.9748,3.9748,0,0,1-2.2774,2.2774,6.6418,6.6418,0,0,1-2.2283.4132c-1.2652.0577-1.6446.07-4.849.07s-3.5838-.0122-4.849-.07a6.6418,6.6418,0,0,1-2.2283-.4132,3.9748,3.9748,0,0,1-2.2774-2.2774,6.6418,6.6418,0,0,1-.4132-2.2283c-.0577-1.2653-.07-1.6449-.07-4.849s.0122-3.5837.07-4.849a6.6418,6.6418,0,0,1,.4132-2.2283A3.9748,3.9748,0,0,1,8.9227,6.6453a6.6418,6.6418,0,0,1,2.2283-.4132c1.2653-.0577,1.6449-.07,4.849-.07M16,4c-3.259,0-3.6677.0138-4.9476.0722A8.8068,8.8068,0,0,0,8.14,4.63,6.1363,6.1363,0,0,0,4.63,8.14a8.8068,8.8068,0,0,0-.5578,2.9129C4.0138,12.3323,4,12.741,4,16s.0138,3.6677.0722,4.9476A8.8074,8.8074,0,0,0,4.63,23.8605a6.1363,6.1363,0,0,0,3.51,3.51,8.8068,8.8068,0,0,0,2.9129.5578C12.3323,27.9862,12.741,28,16,28s3.6677-.0138,4.9476-.0722a8.8074,8.8074,0,0,0,2.9129-.5578,6.1363,6.1363,0,0,0,3.51-3.51,8.8074,8.8074,0,0,0,.5578-2.9129C27.9862,19.6677,28,19.259,28,16s-.0138-3.6677-.0722-4.9476A8.8068,8.8068,0,0,0,27.37,8.14a6.1363,6.1363,0,0,0-3.51-3.5095,8.8074,8.8074,0,0,0-2.9129-.5578C19.6677,4.0138,19.259,4,16,4Z"></path></svg></a>
+        </div>
       </div>
     </header>
 
     <main class="project">
-      <article class="pad-top-5 pad-btm-5 wrapper" style="max-width: 800px;">
-  <header>
-    <div class="meta">
-      <span class="label-sm">2021</span>
-      <span class="label-sm">PHP/JS SaaS App</span>
-    </div>
-    <h1 class="mar-top-05">Benefits Management</h1>
-  </header>
+      
 
-  <p>Developed for a private insurance consulting agency, this app enable their clients, to easily manage their employee health benefits during open enrollment and securely access their records year-round.</p>
+<article class="pad-top-5 pad-btm-5 wrapper">
+  <div class="row">
+    <div class="col-3">
+      <div class="sidebar">
+        
+        
+          <div class="label-sm mar-btm-1 pad-top-1">Tech stack</div>
+          <ul class="tag-list">
+            
+              <li class="tag">PHP</li>
+            
+              <li class="tag">Javascript</li>
+            
+              <li class="tag">MySQL</li>
+            
+              <li class="tag">HTML</li>
+            
+              <li class="tag">CSS</li>
+            
+          </ul>
+        
+      </div>
+    </div>
+    <div class="article-body col-9">
+      <header>
+        <div class="label-list mar-btm-2 mar-top-1">
+          <span class="icon-label">
+            
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M23.6 21.4L27.2 25 27.2 25 23.6 28.6 25 30 30 25 25 20zM20.4 21.4L16.8 25 16.8 25 20.4 28.6 19 30 14 25 19 20z"></path><path d="M28,8H16l-3.4-3.4C12.2,4.2,11.7,4,11.2,4H4C2.9,4,2,4.9,2,6v20c0,1.1,0.9,2,2,2h7v-2H4V6h7.2l3.4,3.4l0.6,0.6H28v8h2v-8	C30,8.9,29.1,8,28,8z"></path></svg></span>
+              <span class="label label-sm">Project</span>
+            
+          </span>
+          <span class="icon-label">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M28,2H16a2.002,2.002,0,0,0-2,2V14H4a2.002,2.002,0,0,0-2,2V30H30V4A2.0023,2.0023,0,0,0,28,2ZM9,28V21h4v7Zm19,0H15V20a1,1,0,0,0-1-1H8a1,1,0,0,0-1,1v8H4V16H16V4H28Z"></path><path d="M18 8H20V10H18zM24 8H26V10H24zM18 14H20V16H18zM24 14H26V16H24zM18 20H20V22H18zM24 20H26V22H24z"></path></svg></span>
+            <span class="label label-sm">EBC</span>
+          </span>
+          <span class="icon-label">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path></svg></span>
+            <span class="label label-sm">2019&ndash;2022</span>
+          </span>
+        </div>
+        <h1 class="mar-top-05">Creating an employee benefits app for a private insurance firm</h1>
+      </header>
+
+      <p>I designed and developed an app for EBC—a private insurance consulting agency—which enabled their clients to manage their employee health benefits during open enrollment and securely access their records year-round.</p>
 <ul>
 <li>Built on a headless CMS for user management and an extendable database API.</li>
 <li>Wrote custom database tables in MySQL to flexibly store company and employee data at scale.</li>
 <li>Wrote progressively-enhanced Javascript for multi-step applications that scale beautifully on mobile devices.</li>
 <li>Integrated with mPDF library to automatically generate PDF copies of employee applications for HR records.</li>
 </ul>
-
-    <aside class="pagination">
-        <div class="prev">Older »<a href="/projects/posados-app/">Posados Café</a></div>
       
-        <div class="next">« Newer<a href="/projects/ibm-cloud-classic-bandwidth/">IBM Cloud Bandwidth</a></div>
-      
-    </aside>
+    </div>
+  </div>
 </article>
+  <section class="layer-01 pad-btm-3 pad-top-3">
+    <div class="wrapper">
+      <div class="card-grid project-grid row">
+        
+          
+            
+          
+
+          
+   <a class="card card__interactive" href="/projects/ibm-cloud-classic-bandwidth/"> 
+    <div class="card--header">
+      
+        <div class="card--eyebrow label-list">
+          
+            <span class="icon-label">
+               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M22 27.1798L19.41 24.5899 18 26 22 30 30 22 28.5899 20.59 22 27.1798zM9 17H16V19H9zM9 12H21V14H9zM9 7H21V9H9z"></path><path d="m16,30H6c-1.103,0-2-.8972-2-2V4c0-1.1028.897-2,2-2h18c1.103,0,2,.8972,2,2v15h-2V4H6v24h10v2Z"></path></svg></span> 
+              
+              <span class="label label-sm">Case Study</span>
+            </span>
+          
+        </div>
+      
+      <h3 class="card--title">Transforming IBM Cloud’s Classic Bandwidth service</h3>
+      
+    </div>
+    <div class="card--body">
+      <p class="body-compact">Hybrid cloud UI for monitoring bandwidth usage and pools for classic IaaS servers.</p>
+    </div>
+    <div class="card--footer">
+      
+        <div class="label label-sm">IBM</div>
+      
+      <div class="label label-sm">2022&ndash;2024</div>
+      <div class="card--tags tag-list">
+        
+        
+          <span class="tag">React</span>
+        
+          <span class="tag">GraphQL</span>
+        
+          <span class="tag">Jest</span>
+        
+      </div>
+    </div>
+   </a> 
+
+        
+          
+            
+          
+
+          
+   <a class="card card__interactive" href="/projects/posados-app/"> 
+    <div class="card--header">
+      
+        <div class="card--eyebrow label-list">
+          
+            <span class="icon-label">
+              
+               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M23.6 21.4L27.2 25 27.2 25 23.6 28.6 25 30 30 25 25 20zM20.4 21.4L16.8 25 16.8 25 20.4 28.6 19 30 14 25 19 20z"></path><path d="M28,8H16l-3.4-3.4C12.2,4.2,11.7,4,11.2,4H4C2.9,4,2,4.9,2,6v20c0,1.1,0.9,2,2,2h7v-2H4V6h7.2l3.4,3.4l0.6,0.6H28v8h2v-8	C30,8.9,29.1,8,28,8z"></path></svg></span> 
+              <span class="label label-sm">Project</span>
+            </span>
+          
+        </div>
+      
+      <h3 class="card--title">Integrating a React Native app with a Wordpress website.</h3>
+      
+    </div>
+    <div class="card--body">
+      <p class="body-compact">React Native app with an integrated Wordpress website using WP Rest API.</p>
+    </div>
+    <div class="card--footer">
+      
+        <div class="label label-sm">Posados Café</div>
+      
+      <div class="label label-sm">2020</div>
+      <div class="card--tags tag-list">
+        
+        
+          <span class="tag">React Native</span>
+        
+          <span class="tag">REST API</span>
+        
+          <span class="tag">PHP</span>
+        
+      </div>
+    </div>
+   </a> 
+
+        
+          
+            
+          
+
+          
+   <a class="card card__interactive" href="/projects/secret-owl/"> 
+    <div class="card--header">
+      
+        <div class="card--eyebrow label-list">
+          
+            <span class="icon-label">
+              
+               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M23.6 21.4L27.2 25 27.2 25 23.6 28.6 25 30 30 25 25 20zM20.4 21.4L16.8 25 16.8 25 20.4 28.6 19 30 14 25 19 20z"></path><path d="M28,8H16l-3.4-3.4C12.2,4.2,11.7,4,11.2,4H4C2.9,4,2,4.9,2,6v20c0,1.1,0.9,2,2,2h7v-2H4V6h7.2l3.4,3.4l0.6,0.6H28v8h2v-8	C30,8.9,29.1,8,28,8z"></path></svg></span> 
+              <span class="label label-sm">Project</span>
+            </span>
+          
+        </div>
+      
+      <h3 class="card--title">Send secrets without leaving your inbox</h3>
+      
+    </div>
+    <div class="card--body">
+      <p class="body-compact">Securely share passwords by creating temporary links while composing an email.</p>
+    </div>
+    <div class="card--footer">
+      
+        <div class="label label-sm">SecretOwl</div>
+      
+      <div class="label label-sm">2020</div>
+      <div class="card--tags tag-list">
+        
+        
+          <span class="tag">Javascript</span>
+        
+          <span class="tag">PHP</span>
+        
+          <span class="tag">Outlook API</span>
+        
+      </div>
+    </div>
+   </a> 
+
+        
+      </div>
+    </div>
+  </section>
 
     </main>
 
     <footer class="footer pad-top-5 pad-btm-4">
       <div class="wrapper flex direction-col align-center">
         <img src="/assets/img/cj-icon.svg" height="30" alt="Icon of a coffee cup wearing a hat">
-        <p class="mar-top-1 mar-btm-1 heading-4">Thank you for visiting!</p>
-        <div class="social-nav">
-          <a href="https://github.com/cuppajoey"><img src="/assets/img/github.svg" alt="Github Logo" width="20" height="20"></a>
-          <a href="https://www.linkedin.com/in/cuppajoey"><img src="/assets/img/linkedin.svg" alt="LinkedIn Logo" width="20" height="20"></a>
-          <a href="https://instagram.com/cuppajoey"><img src="/assets/img/instagram.svg" alt="Instagram Logo" width="20" height="20"></a>
+        <span class="body-compact mar-top-1 mar-btm-05 text-center">Made with 💜. Built on <a href="https://11ty.dev/" target="_blank">Eleventy</a>. <br/>Thank you for visiting!</span>
+        <div class="social">
+          <a href="https://github.com/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z"></path></svg></a>
+          <a href="https://www.linkedin.com/in/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M26.2,4H5.8C4.8,4,4,4.8,4,5.7v20.5c0,0.9,0.8,1.7,1.8,1.7h20.4c1,0,1.8-0.8,1.8-1.7V5.7C28,4.8,27.2,4,26.2,4z M11.1,24.4	H7.6V13h3.5V24.4z M9.4,11.4c-1.1,0-2.1-0.9-2.1-2.1c0-1.2,0.9-2.1,2.1-2.1c1.1,0,2.1,0.9,2.1,2.1S10.5,11.4,9.4,11.4z M24.5,24.3	H21v-5.6c0-1.3,0-3.1-1.9-3.1c-1.9,0-2.1,1.5-2.1,2.9v5.7h-3.5V13h3.3v1.5h0.1c0.5-0.9,1.7-1.9,3.4-1.9c3.6,0,4.3,2.4,4.3,5.5V24.3z"></path></svg></a>
+          <a href="https://instagram.com/cuppajoey"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><circle cx="22.406" cy="9.594" r="1.44"></circle><path d="M16,9.8378A6.1622,6.1622,0,1,0,22.1622,16,6.1622,6.1622,0,0,0,16,9.8378ZM16,20a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"></path><path d="M16,6.1622c3.2041,0,3.5837.0122,4.849.07a6.6418,6.6418,0,0,1,2.2283.4132,3.9748,3.9748,0,0,1,2.2774,2.2774,6.6418,6.6418,0,0,1,.4132,2.2283c.0577,1.2653.07,1.6449.07,4.849s-.0122,3.5837-.07,4.849a6.6418,6.6418,0,0,1-.4132,2.2283,3.9748,3.9748,0,0,1-2.2774,2.2774,6.6418,6.6418,0,0,1-2.2283.4132c-1.2652.0577-1.6446.07-4.849.07s-3.5838-.0122-4.849-.07a6.6418,6.6418,0,0,1-2.2283-.4132,3.9748,3.9748,0,0,1-2.2774-2.2774,6.6418,6.6418,0,0,1-.4132-2.2283c-.0577-1.2653-.07-1.6449-.07-4.849s.0122-3.5837.07-4.849a6.6418,6.6418,0,0,1,.4132-2.2283A3.9748,3.9748,0,0,1,8.9227,6.6453a6.6418,6.6418,0,0,1,2.2283-.4132c1.2653-.0577,1.6449-.07,4.849-.07M16,4c-3.259,0-3.6677.0138-4.9476.0722A8.8068,8.8068,0,0,0,8.14,4.63,6.1363,6.1363,0,0,0,4.63,8.14a8.8068,8.8068,0,0,0-.5578,2.9129C4.0138,12.3323,4,12.741,4,16s.0138,3.6677.0722,4.9476A8.8074,8.8074,0,0,0,4.63,23.8605a6.1363,6.1363,0,0,0,3.51,3.51,8.8068,8.8068,0,0,0,2.9129.5578C12.3323,27.9862,12.741,28,16,28s3.6677-.0138,4.9476-.0722a8.8074,8.8074,0,0,0,2.9129-.5578,6.1363,6.1363,0,0,0,3.51-3.51,8.8074,8.8074,0,0,0,.5578-2.9129C27.9862,19.6677,28,19.259,28,16s-.0138-3.6677-.0722-4.9476A8.8068,8.8068,0,0,0,27.37,8.14a6.1363,6.1363,0,0,0-3.51-3.5095,8.8074,8.8074,0,0,0-2.9129-.5578C19.6677,4.0138,19.259,4,16,4Z"></path></svg></a>
         </div>
       </div>
     </footer>
