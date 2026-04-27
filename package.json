@@ -17,7 +17,7 @@
     "watch:sass": "sass --watch assets/sass:_site/assets/css"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
