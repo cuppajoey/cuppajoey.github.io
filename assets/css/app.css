@@ -1536,11 +1536,6 @@ table tr th, table tr td {
   padding: 6px 13px;
 }
 
-.header {
-  border-bottom: 0.0625rem solid var(--border-subtle);
-  padding: 1.75rem 0;
-  position: relative;
-}
 .header::after, .header::before {
   content: "";
   height: 100%;
@@ -1554,6 +1549,11 @@ table tr th, table tr td {
 .header::before {
   border-left: 0.0625rem solid var(--border-subtle);
   left: 1.5rem;
+}
+.header {
+  border-bottom: 0.0625rem solid var(--border-subtle);
+  padding: 1.75rem 0;
+  position: relative;
 }
 .header .wrapper {
   align-items: center;
@@ -1597,9 +1597,6 @@ table tr th, table tr td {
   margin-left: auto;
 }
 
-main {
-  position: relative;
-}
 main::after, main::before {
   content: "";
   height: 100%;
@@ -1613,6 +1610,9 @@ main::after {
 main::before {
   border-left: 0.0625rem solid var(--border-subtle);
   left: 1.5rem;
+}
+main {
+  position: relative;
 }
 
 .post-tag {
@@ -1666,10 +1666,6 @@ main::before {
   fill: var(--text-secondary);
 }
 
-.footer {
-  background-color: var(--black);
-  position: relative;
-}
 .footer::after, .footer::before {
   content: "";
   height: 100%;
@@ -1683,6 +1679,10 @@ main::before {
 .footer::before {
   border-left: 0.0625rem solid var(--border-subtle);
   left: 1.5rem;
+}
+.footer {
+  background-color: var(--black);
+  position: relative;
 }
 .footer .wrapper {
   position: relative;
